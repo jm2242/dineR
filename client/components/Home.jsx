@@ -20,7 +20,7 @@ Home = React.createClass({
   orderItem(_id) {
     MyData.update({_id}, {$set: { affirmative: true}})
     //Meteor.call("repopulate");
-    this.context.router.transitionTo('/order');
+    this.context.router.transitionTo('/customize');
   },
   renderCards() {
     return this.data.users

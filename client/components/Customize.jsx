@@ -39,5 +39,4 @@ Customize = React.createClass({
       </div>
     )
   }
-  //mealOptions: {"Ingredient" : true, "Ingredient2" : false}
 });
