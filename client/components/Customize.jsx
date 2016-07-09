@@ -1,7 +1,7 @@
 Customize = React.createClass({
   mixins: [ReactMeteorData],
   getMeteorData() {
-    let handle = Meteor.subscribe("myData")
+    let handle = Meteor.subscribe("meals")
     let data = meals.find({affirmative: true}).fetch()
     return {
       loading: !handle.ready(),
@@ -34,7 +34,7 @@ Customize = React.createClass({
          <p>Lettuce<input type="checkbox" value="Hello!" defaultChecked/></p>
          <p>Lettuce<input type="checkbox" value="Hello!" defaultChecked/></p>
         <div className="bar bar-footer bar-assertive">
-          <span className="database-reset-button" onClick={this.context.router.transitionTo('/customize')}>Order</span>
+          <h1>Order</h1>
         </div>
       </div>
     )
