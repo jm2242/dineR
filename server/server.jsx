@@ -27,11 +27,7 @@ Meteor.startup(function() {
 
 Meteor.methods({
   repopulate: function() {
-    MyData.insert({
-      name: "Bruh",
-      image: "https://www.pizzahut.com/assets/w/tile/thor/Pepperoni_Lovers_Pizza.png",
-      details: "I ran out of food ideas"
-    })
+    return [MyData.findOne()]
   },
   reset: function() {
     MyData.remove({affirmative: true});

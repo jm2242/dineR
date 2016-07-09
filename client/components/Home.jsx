@@ -7,7 +7,7 @@ Home = React.createClass({
   contextTypes: {router: React.PropTypes.object.isRequired},
   getMeteorData() {
     let handle = Meteor.subscribe("myData")
-    let data = MyData.find().fetch()
+    let data = [MyData.findOne()]
     return {
       loading: !handle.ready(),
       users: data
