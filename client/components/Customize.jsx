@@ -34,7 +34,7 @@ Customize = React.createClass({
          <p>Lettuce<input type="checkbox" value="Hello!" defaultChecked/></p>
          <p>Lettuce<input type="checkbox" value="Hello!" defaultChecked/></p>
         <div className="bar bar-footer bar-assertive">
-          <h1 class="title">Order</h1>
+          <span className="database-reset-button" onClick={this.context.router.transitionTo('/customize')}>Order</span>
         </div>
       </div>
     )

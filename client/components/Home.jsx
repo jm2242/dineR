@@ -22,6 +22,7 @@ Home = React.createClass({
   orderItem(_id) {
     meals.update({_id}, {$set: { affirmative: true}})
     //Meteor.call("repopulate");
+    currentOrder.insert(this.props.card)
     this.context.router.transitionTo('/customize');
   },
   renderCards() {
