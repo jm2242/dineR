@@ -1,13 +1,9 @@
-React.initializeTouchEvents(true)
-// Add listener to get :active pseudoselector working. hack
-document.addEventListener("touchstart", function(){}, false)
-
-Home = React.createClass({
+savedItems = React.createClass({
   mixins: [ReactMeteorData],
   contextTypes: {router: React.PropTypes.object.isRequired},
   getMeteorData() {
     let handle = Meteor.subscribe("meals")
-    let data = [meals.findOne( { affirmative: { $ne: true }})]
+    let data = [meals.findOne()]
     let data2 = savedMeals.find().fetch()
     return {
       loading: !handle.ready(),
@@ -24,8 +20,20 @@ Home = React.createClass({
     //Meteor.call("repopulate");
     this.context.router.transitionTo('/order');
   },
+  renderSavedCards() {
+    return this.data.savedMeals
+      .map((card) => {
+        return <Card
+          key={card._id}
+          card={card}
+          remove={ () => this.removeCard(card._id)}
+          orderItem={ () => this.orderItem(card._id)}
+        />
+    })
+  },
   renderCards() {
     return this.data.users
+      .filter((user) =>  user.affirmative != true)
       .map((card) => {
         return <Card
           key={card._id}
@@ -39,7 +47,7 @@ Home = React.createClass({
     if (this.data.loading) {
       return <h1>Loading</h1>
     }
-    return <div>{this.renderCards()}</div>
+    return <div>{this.renderSavedCards()}</div>
   }
 })
 
