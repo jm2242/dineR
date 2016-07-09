@@ -15,11 +15,11 @@ Home = React.createClass({
   },
   removeCard(_id) {
     MyData.remove(_id)
-    Meteor.call("repopulate")
+    //Meteor.call("repopulate")
   },
   orderItem(_id) {
     MyData.update({_id}, {$set: { affirmative: true}})
-    Meteor.call("repopulate");
+    //Meteor.call("repopulate");
     this.context.router.transitionTo('/order');
   },
   renderCards() {
@@ -118,6 +118,7 @@ Card = React.createClass({
         <div className="item">
           <h2>{this.props.card.name}</h2>
           <p>{this.props.card.details}</p>
+          <p>{this.props.card.price}</p>
         </div>
       </div>
     )
