@@ -22,7 +22,7 @@ Home = React.createClass({
   orderItem(_id) {
     meals.update({_id}, {$set: { affirmative: true}})
     //Meteor.call("repopulate");
-    this.context.router.transitionTo('/order');
+    //this.context.router.transitionTo('/order');
   },
   renderCards() {
     return this.data.users
@@ -42,6 +42,24 @@ Home = React.createClass({
     return <div>{this.renderCards()}</div>
   }
 })
+
+
+
+MyButton = React.createClass({
+  render: function() { 
+    var textStyle = {
+      cursor: "pointer"
+    }
+    return (
+      <a className={this.props.buttonClass} style={textStyle} onClick={this.props.clickHandler}></a>
+    )
+  }
+})
+
+
+
+
+
 
 Card = React.createClass({
   getInitialState() {
@@ -100,6 +118,10 @@ Card = React.createClass({
       })
     }
   },
+  handleFunc(e) {
+    e.preventDefault()
+    debugger
+  },
   render() {
     let cardStyle = {
       transform: "translate(" +
@@ -125,6 +147,11 @@ Card = React.createClass({
           <h2>{this.props.card.name}</h2>
           <p>{this.props.card.details}</p>
           <p>{this.props.card.price}</p>
+        </div> 
+        <div className="button-bar">
+          <MyButton clickHandler={this.handleFunc} buttonClass="button button-block button-assertive icon ion-close-round" /> 
+          <MyButton clickHandler={this.handleFunc} buttonClass="button button-block button-calm icon ion-heart" />   
+          <MyButton clickHandler={this.handleFunc} buttonClass="button button-block button-balanced icon ion-checkmark-round" />
         </div>
       </div>
     )
