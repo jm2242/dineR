@@ -1,4 +1,4 @@
-Other = React.createClass({
+Order = React.createClass({
   mixins: [ReactMeteorData],
   getMeteorData() {
     let handle = Meteor.subscribe("myData")
