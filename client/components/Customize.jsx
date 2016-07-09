@@ -25,7 +25,7 @@ Customize = React.createClass({
   //     )
   //   })
     return (
-      <div className="list">
+      <div className="">
         <div className="item item-divider">
           <h1>Customize</h1>
         </div>
@@ -34,7 +34,9 @@ Customize = React.createClass({
          <p>Lettuce<input type="checkbox" value="Hello!" defaultChecked/></p>
          <p>Lettuce<input type="checkbox" value="Hello!" defaultChecked/></p>
         <div className="bar bar-footer bar-assertive">
-          <h1>Order</h1>
+          <ReactRouter.Link className="button button-bar" to={"/"}>CONTINUE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
+            <span className = "icon ion-arrow-right-a"></span>
+          </ReactRouter.Link>
         </div>
       </div>
     )
