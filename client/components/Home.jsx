@@ -22,7 +22,7 @@ Home = React.createClass({
   orderItem(_id) {
     meals.update({_id}, {$set: { affirmative: true}})
     //Meteor.call("repopulate");
-    //this.context.router.transitionTo('/order');
+    this.context.router.transitionTo('/order');
   },
   renderCards() {
     return this.data.users
@@ -43,24 +43,6 @@ Home = React.createClass({
   }
 })
 
-
-
-MyButton = React.createClass({
-  render: function() { 
-    var textStyle = {
-      cursor: "pointer"
-    }
-    return (
-      <a className={this.props.buttonClass} style={textStyle} onClick={this.props.clickHandler}></a>
-    )
-  }
-})
-
-
-
-
-
-
 Card = React.createClass({
   getInitialState() {
     return {
@@ -71,8 +53,14 @@ Card = React.createClass({
       dragging: "none"
     }
   },
-  clickSavedMeal() {
-    e.preventDefault();
+  clickSavedMeal(e) {
+    e.preventDefault()
+    this.setState({
+        x: 0,
+        y: -1000,
+        dragging: "all 0.5s ease"
+      })
+    Meteor.setTimeout(this.props.remove, 500)
     savedMeals.insert(this.props.card)
   },
   moveCardInit(e) {
@@ -91,6 +79,25 @@ Card = React.createClass({
       x: deltaX,
       y: deltaY
     })
+  },
+  orderButtonClicked(e) {
+    e.preventDefault()
+    this.setState({
+        x: 1000,
+        y: 0,
+        dragging: "all 0.5s ease"
+      })
+      //Add to favorites list
+      Meteor.setTimeout(this.props.orderItem, 500)
+  },
+  xButtonClicked(e) {
+    e.preventDefault()
+    this.setState({
+        x: -1000,
+        y: 0,
+        dragging: "all 0.5s ease"
+      })
+      Meteor.setTimeout(this.props.remove, 500)
   },
   moveCardEnd(e) {
     e.preventDefault()
@@ -139,19 +146,21 @@ Card = React.createClass({
       cardStyle.marginBottom = "-" + (document.getElementsByClassName("card")[0].offsetHeight + 20) + "px"
     }
     return (
-      <div className="card" onTouchStart={this.moveCardInit} onTouchMove={this.moveCard} onTouchEnd={this.moveCardEnd} style={cardStyle}>
-        <div className="item item-body">
-          <img className="full-image" src={this.props.card.image} />
+      <div className="">
+        <div className="card" onTouchStart={this.moveCardInit} onTouchMove={this.moveCard} onTouchEnd={this.moveCardEnd} style={cardStyle}>
+          <div className="item item-body">
+            <img className="full-image" src={this.props.card.image} />
+          </div>
+          <div className="item">
+            <h2>{this.props.card.name}</h2>
+            <p>{this.props.card.details}</p>
+            <p>{this.props.card.price}</p>
+          </div>
         </div>
-        <div className="item">
-          <h2>{this.props.card.name}</h2>
-          <p>{this.props.card.details}</p>
-          <p>{this.props.card.price}</p>
-        </div> 
-        <div className="button-bar">
-          <MyButton clickHandler={this.handleFunc} buttonClass="button button-block button-assertive icon ion-close-round" /> 
-          <MyButton clickHandler={this.handleFunc} buttonClass="button button-block button-calm icon ion-heart" />   
-          <MyButton clickHandler={this.handleFunc} buttonClass="button button-block button-balanced icon ion-checkmark-round" />
+        <div className="float-bottom button-bar">
+          <MyButton clickHandler={this.xButtonClicked} buttonClass="button button-block button-assertive icon ion-close-round" /> 
+          <MyButton clickHandler={this.clickSavedMeal} buttonClass="button button-block button-calm icon ion-heart" />   
+          <MyButton clickHandler={this.orderButtonClicked} buttonClass="button button-block button-balanced icon ion-checkmark-round" />
         </div>
       </div>
     )
