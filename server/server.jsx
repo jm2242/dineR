@@ -3,13 +3,22 @@ Meteor.publish("myData", function() {
 })
 
 populate = function() {
-  while (MyData.find().count() < 10) {
-    MyData.insert({
-      name: faker.name.findName(),
-      image: faker.image.people() + "?" + Random.hexString(24),
-      details: faker.lorem.sentence()
-    })
-  }
+  
+  MyData.insert({
+    name: "Pizza",
+    image: "https://www.pizzahut.com/assets/w/tile/thor/Pepperoni_Lovers_Pizza.png",
+    details: "Some dank pizza"
+  })
+  MyData.insert({
+    name: "Sandwich",
+    image: "https://www.pizzahut.com/assets/w/tile/thor/Pepperoni_Lovers_Pizza.png",
+    details: "A dank pizza Sandwich"
+  })
+  MyData.insert({
+    name: "Cheeseburger",
+    image: "https://www.pizzahut.com/assets/w/tile/thor/Pepperoni_Lovers_Pizza.png",
+    details: "A dank Cheeseburger"
+  })
 }
 
 Meteor.startup(function() {
@@ -19,9 +28,9 @@ Meteor.startup(function() {
 Meteor.methods({
   repopulate: function() {
     MyData.insert({
-      name: faker.name.findName(),
-      image: faker.image.people() + "?" + Random.hexString(24),
-      details: faker.lorem.sentence()
+      name: "Bruh",
+      image: "https://www.pizzahut.com/assets/w/tile/thor/Pepperoni_Lovers_Pizza.png",
+      details: "I ran out of food ideas"
     })
   },
   reset: function() {

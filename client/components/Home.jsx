@@ -19,6 +19,7 @@ Home = React.createClass({
   setAffirmative(_id) {
     MyData.update({_id}, {$set: { affirmative: true}})
     Meteor.call("repopulate")
+    this.context.router.transitionTo('/other')
   },
   renderCards() {
     return this.data.users
