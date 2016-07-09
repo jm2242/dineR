@@ -50,8 +50,8 @@ Home = React.createClass({
         y: -1000,
         dragging: "all 0.5s ease"
       })
-    Meteor.setTimeout(this.props.remove, 500)
-    savedMeals.insert(this.props.card)
+    Meteor.setTimeout(this.removeCard(this.data.newMeal[0]._id), 500)
+    savedMeals.insert(this.data.newMeal[0])
   },
   renderCards() {
     return this.data.newMeal

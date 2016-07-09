@@ -20,7 +20,7 @@ savedItems = React.createClass({
   orderItem(_id) {
     meals.update({_id}, {$set: { affirmative: true}})
     //Meteor.call("repopulate");
-    this.context.router.transitionTo('/order');
+    this.context.router.transitionTo('/customize' +'/' + _id);
   },
   renderCards() {
     return this.data.savedMeals

@@ -14,7 +14,6 @@ Customize = React.createClass({
   render() {
   console.log(this.props);
   let swipedMeal = meals.findOne({_id: this.props.params.mealId});
-  debugger;
   //   if (this.data.loading) {
   //     return <h1>Loading</h1>
   //   }
