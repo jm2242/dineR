@@ -12,18 +12,24 @@ Customize = React.createClass({
     Meteor.call('reset')
   },
   render() {
-  console.log(this.props);
-  let swipedMeal = meals.findOne({_id: this.props.params.mealId});
+    console.log(this.props);
+    let swipedMeal = meals.findOne({_id: this.props.params.mealId});
+    var options = [];
+    debugger;
+    var c = 0;
+    for (var option in swipedMeal['mealOptions']) {
+      options.push('<p>'+option+'<input type="checkbox" value="'+c+'"'
+        +getCheckedValue(swipedMeal['mealOptions'].option)+
+        '/></p>')
+      c += 1;
+    }
     return (
       <div className="">
         <div className="item item-divider">
           <h1>Customize</h1>
         </div>
         <h2>{swipedMeal['name']}</h2>
-         <p>Lettuce<input type="checkbox" value="Hello!" defaultChecked/></p>
-         <p>Lettuce<input type="checkbox" value="Hello!" defaultChecked/></p>
-         <p>Lettuce<input type="checkbox" value="Hello!" defaultChecked/></p>
-         <p>Lettuce<input type="checkbox" value="Hello!" defaultChecked/></p>
+        <div dangerouslySetInnerHTML={{__html: options}} />
         <div className="bar bar-footer bar-assertive">
           <ReactRouter.Link className="button button-bar" to={"/"}>Order  
             <span className = "icon ion-arrow-right-a"></span>
@@ -33,6 +39,15 @@ Customize = React.createClass({
     )
   }
 });
+
+function getCheckedValue(isChecked) {
+  if (isChecked){
+    return "defaultChecked";
+  }
+  else {
+    return "";
+  }
+}
 
   // meals.insert({
   //   name: "California Roll",
