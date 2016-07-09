@@ -4,7 +4,7 @@ MyButton = React.createClass({
       cursor: "pointer"
     }
     return (
-      <a className={this.props.buttonClass} style={textStyle} onClick={this.props.clickHandler}></a>
+      <a className={this.props.buttonClass} style={textStyle} onClick={this.props.clickHandler}>{this.props.buttonText}</a>
     )
   }
 })
