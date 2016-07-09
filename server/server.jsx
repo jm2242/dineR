@@ -1,10 +1,10 @@
-Meteor.publish("myData", function() {
-  return MyData.find()
+Meteor.publish("meals", function() {
+  return meals.find()
 })
 
 populate = function() {
   
-  MyData.insert({
+  meals.insert({
     name: "Pepperoni Pizza",
     restaurant: "Pizza Place",
     image: "https://www.pizzahut.com/assets/w/tile/thor/Pepperoni_Lovers_Pizza.png",
@@ -14,7 +14,7 @@ populate = function() {
     mealOptions: {"Extra Cheese" : false, "Sausage" : false, "Pepper" : false, "Onions" : false, "Olives" : false}
 
   })
-  MyData.insert({
+  meals.insert({
     name: "California Roll",
     restaurant: "Miyagi Mansion",
     image: "http://www.mnpr.biz/wp-content/uploads/2012/12/California-Roll-1.jpg",
@@ -23,7 +23,7 @@ populate = function() {
     rating: 4.5,
     mealOptions: {"Soy Sauce" : true, "Wasabi" : true, "Pickeled Ginger" : true}
   })
-  MyData.insert({
+  meals.insert({
     name: "Chinese Fried Rice",
     restaurant: "Asian Place",
     image: "http://beautifycorner.com/wp-content/uploads/2015/02/chinese_fried_rice-1024x683.jpg",
@@ -33,7 +33,7 @@ populate = function() {
     mealOptions: {"Peas" : true, "Carrots" : true, "Beef" : true, "Chicken" : false, "Shrimp" : false}
 
   })
-  MyData.insert({
+  meals.insert({
     name: "Beef Burrito",
     restaurant: "Picante Queso",
     image: "http://www.tacobueno.com/media/1381/beefbob.png?quality=65",
@@ -43,7 +43,7 @@ populate = function() {
     mealOptions: {"Guacomole" : false, "Salsa" : false, "Sour Cream" : false}
 
   })
-  MyData.insert({
+  meals.insert({
     name: "Vanilla Ice Cream",
     restaurant: "Creamy Treats",
     image: "http://foodnetwork.sndimg.com/content/dam/images/food/fullset/2012/4/5/2/FNM_050112-Ted-Farmers-Market-001_s4x3.jpg.rend.sniipadlarge.jpeg",
@@ -53,7 +53,7 @@ populate = function() {
     mealOptions: {"Chocolate Chips" : false, "Waffle Cone" : false, "Caramel" : false}
 
   })
-  MyData.insert({
+  meals.insert({
     name: "Lemon-Pepper Salmon",
     restaurant: "Salmon Sanctuary",
     image: "http://recipegreat.com/images/lemon-pepper-salmon-04.jpg",
@@ -63,7 +63,7 @@ populate = function() {
     mealOptions: {}
 
   })
-  MyData.insert({
+  meals.insert({
     name: "Nachos Supreme",
     restaurant: "Mexican Magic",
     image: "http://uvmbored.com/wp-content/uploads/2016/02/Urban_Nachos1.jpg",
@@ -73,7 +73,7 @@ populate = function() {
     mealOptions: {"Salsa" : true, "Cheese" : true, "Beef" : true, "Guacamole" : false, "Jalapeno" : false}
 
   })
-  MyData.insert({
+  meals.insert({
     name: "Tiramisu",
     restaurant: "Competent Confections",
     image: "http://foodnetwork.sndimg.com/content/dam/images/food/fullset/2011/2/4/2/RX-FNM_030111-Sugar-Fix-005_s4x3.jpg.rend.sni12col.landscape.jpeg",
@@ -84,7 +84,7 @@ populate = function() {
 
 
   })
-  MyData.insert({
+  meals.insert({
     name: "Udon Soup",
     restaurant: "City Wok",
     image: "http://atmedia.imgix.net/ca703b173c62c00aaf94aeefa4eb4715203a4597?w=800.0&fit=max",
@@ -94,7 +94,7 @@ populate = function() {
     mealOptions: {"Eggs" : true}
 
   })
-  MyData.insert({
+  meals.insert({
     name: "Ham and Cheese Omlet",
     restaurant: "No Finer Diner",
     image: "http://www.incredibleegg.org/wp-content/uploads/ham_cheese_omelette_930x5502-930x550.jpg",
@@ -103,7 +103,7 @@ populate = function() {
     mealOptions:{"Ham" : true, "Cheese" : true, "Green Onions" : true}
 
   })
-  MyData.insert({
+  meals.insert({
     name: "Strawberry Parfait",
     restaurant: "Fruity Fun",
     image: "https://foodimentaryguy.files.wordpress.com/2014/06/lohiscreations-com.jpg",
@@ -112,7 +112,7 @@ populate = function() {
     mealOptions: {}
 
   })
-  MyData.insert({
+  meals.insert({
     name: "White Chocolate Macadamia Nut Cookies",
     restaurant: "Sweet Treats",
     image: "http://canadianhometrends.com/wp-content/uploads/2014/04/white-choco-maca1.jpg",
@@ -259,13 +259,13 @@ Meteor.startup(function() {
 
 Meteor.methods({
   repopulate: function() {
-    MyData.insert({
+    meals.insert({
       name: "Bruh",
       image: "https://www.pizzahut.com/assets/w/tile/thor/Pepperoni_Lovers_Pizza.png",
       details: "I ran out of food ideas"
     })
   },
   reset: function() {
-    MyData.remove({affirmative: true});
+    meals.remove({affirmative: true});
   }
 })

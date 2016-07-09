@@ -4,6 +4,7 @@ const routes = (
     <ReactRouter.Route name="other" path="/order" handler={Order} />
     <ReactRouter.Route name="customize" path="/customize" handler={Customize} />
     <ReactRouter.Route name="settings" path="/settings" handler={Settings} />
+    <ReactRouter.Route name="savedItems" path="/savedItems" handler={savedItems} />
     <ReactRouter.DefaultRoute handler={AppLoading} />
     <ReactRouter.NotFoundRoute handler={AppNotFound} />
   </ReactRouter.Route>
