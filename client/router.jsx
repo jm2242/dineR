@@ -5,6 +5,7 @@ const routes = (
     <ReactRouter.Route name="customize" path="/customize/:mealId" handler={Customize}/>
     <ReactRouter.Route name="settings" path="/settings" handler={Settings} />
     <ReactRouter.Route name="savedItems" path="/savedItems" handler={savedItems} />
+    <ReactRouter.Route name="orderMethod" path="/orderMethod" handler={orderMethod} />
     <ReactRouter.DefaultRoute handler={AppLoading} />
     <ReactRouter.NotFoundRoute handler={AppNotFound} />
   </ReactRouter.Route>
