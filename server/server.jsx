@@ -104,145 +104,153 @@ populate = function() {
 
   })
   MyData.insert({
-    name: "Sandwich",
-    image: "https://www.pizzahut.com/assets/w/tile/thor/Pepperoni_Lovers_Pizza.png",
-    details: "A dank pizza Sandwich",
-    price: "$10.99"
+    name: "Strawberry Parfait",
+    restaurant: "Fruity Fun",
+    image: "https://foodimentaryguy.files.wordpress.com/2014/06/lohiscreations-com.jpg",
+    details: "Strawberries from the dank fields and fresh yogurt",
+    price: "$3.99",
+    mealOptions: {}
 
   })
   MyData.insert({
-    name: "Cheeseburger",
-    image: "https://www.pizzahut.com/assets/w/tile/thor/Pepperoni_Lovers_Pizza.png",
-    details: "A dank Cheeseburger",
-    price: "$10.99"
+    name: "White Chocolate Macadamia Nut Cookies",
+    restaurant: "Sweet Treats",
+    image: "http://canadianhometrends.com/wp-content/uploads/2014/04/white-choco-maca1.jpg",
+    details: "Cookies for the dankest of children",
+    price: "$5.99",
+    mealOptions: {}
+
+ })
+ meals.insert({
+    name: "Pad See Ew",
+    restaurant: "City Wok",
+    image: "http://auchevalchicago.com/wp-content/uploads/IMG_4780-2.jpg",
+    details: "A dank Pad See Ew",
+    price: "$12.99",
+    rating: 4.2,
+    mealOptions: {}
 
   })
-  MyData.insert({
-    name: "Pizza",
-    image: "https://www.pizzahut.com/assets/w/tile/thor/Pepperoni_Lovers_Pizza.png",
-    details: "Some dank pizza",
-    price: "$10.99"
+  meals.insert({
+    name: "Bacon", 
+    restaurant: "Au Cheval",
+    image: "http://auchevalchicago.com/wp-content/uploads/bologna.jpg",
+    details: "Bacon...Dank",
+    price: "$4.99",
+    rating: 5.0,
+    mealOptions: {"Crispy": false, "Extra Bacon": "false"}
 
   })
-  MyData.insert({
-    name: "Sandwich",
-    image: "https://www.pizzahut.com/assets/w/tile/thor/Pepperoni_Lovers_Pizza.png",
-    details: "A dank pizza Sandwich",
-    price: "$10.99"
+  meals.insert({
+    name: "Bacon Cheeseburger",
+    restaurant: "Au Cheval",
+    image: "http://auchevalchicago.com/wp-content/uploads/new-burger.jpg",
+    details: "A Bacon Cheeseburger with a Dank Egg",
+    price: "$10.99",
+    rating: 4.8,
+    mealOptions: {"Garlic Aioli": true, "Fried Egg": true, "Onion": true, "turkey burger": false }
 
   })
-  MyData.insert({
-    name: "Cheeseburger",
-    image: "https://www.pizzahut.com/assets/w/tile/thor/Pepperoni_Lovers_Pizza.png",
-    details: "A dank Cheeseburger",
-    price: "$10.99"
+  meals.insert({
+    name: "Orange and Fennel-Roasted Chicken",
+    restaurant: "Orange Chicken Place",
+    image: "https://rencooks.files.wordpress.com/2011/06/100_8544.jpg",
+    details: "Chicken with Hint of Orange and Dank",
+    price: "$11.99",
+    rating: 4.3,
+    mealOptions: {}
 
   })
-  MyData.insert({
-    name: "Pizza",
-    image: "https://www.pizzahut.com/assets/w/tile/thor/Pepperoni_Lovers_Pizza.png",
-    details: "Some dank pizza",
-    price: "$10.99"
+  meals.insert({
+    name: "Brownie Pie",
+    restaurant: "Sweet Sweet Sweet",
+    image: "http://s3.favim.com/orig/40/brownie-cake-chocolate-delicious-food-Favim.com-335002.jpg",
+    details: "Sweet Sweet Dank",
+    price: "$6.99",
+    rating: 4.1,
+    mealOptions: {}
 
   })
-  MyData.insert({
-    name: "Sandwich",
-    image: "https://www.pizzahut.com/assets/w/tile/thor/Pepperoni_Lovers_Pizza.png",
-    details: "A dank pizza Sandwich",
-    price: "$10.99"
+    meals.insert({
+    name: "Barbeque Sauce Glazed Steak Tip",
+    restaurant: "Meet my Meat",
+    image: "http://www.freshmeatdirect.co.uk/ekmps/shops/stdnmeats/images/9-x-peppered-bbq-minute-steaks-special-offer--57-p.jpg",
+    details: "Dank Glaze for a Dank Steak",
+    price: "$17.99",
+    rating: 4.4,
+    mealOptions: {}
 
   })
-  MyData.insert({
-    name: "Cheeseburger",
-    image: "https://www.pizzahut.com/assets/w/tile/thor/Pepperoni_Lovers_Pizza.png",
-    details: "A dank Cheeseburger",
-    price: "$10.99"
+    meals.insert({
+    name: "Grilled Pork Steaks",
+    restaurant: "Porkys",
+    image: "http://www.extraordinarybbq.com/wp-content/uploads/2012/05/DSC_0101.jpg",
+    details: "We Double Dare you to find Danker Pork",
+    price: "$13.99",
+    rating: 4.1,
+    mealOptions: {}
 
   })
-  MyData.insert({
-    name: "Pizza",
-    image: "https://www.pizzahut.com/assets/w/tile/thor/Pepperoni_Lovers_Pizza.png",
-    details: "Some dank pizza",
-    price: "$10.99"
+    meals.insert({
+    name: "Spaghetti alla Carbonara",
+    restaurant: "Sweet Sweet Sweet",
+    image: "http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2012/5/9/1336579239372/Felicitys-perfect-spaghet-008.jpg",
+    details: "Dank from Under the Tuscan Sun",
+    price: "$11.99",
+    rating: 4.9,
+    mealOptions: {"Extra Pecorino Romano": false}
 
   })
-  MyData.insert({
-    name: "Sandwich",
-    image: "https://www.pizzahut.com/assets/w/tile/thor/Pepperoni_Lovers_Pizza.png",
-    details: "A dank pizza Sandwich",
-    price: "$10.99"
+    meals.insert({
+    name: "Eggplant Parmesan",
+    restaurant: "We Ran Out Of Chicken",
+    image: "http://www.cook-italian.com/.a/6a010535d7df4f970b0120a870799c970b-500pi",
+    details: "Eggplant, Never Been a Danker Vegetable",
+    price: "$8.99",
+    rating: 3.9,
+    mealOptions: {"Extra Bread": false}
 
-  })
-  MyData.insert({
-    name: "Cheeseburger",
-    image: "https://www.pizzahut.com/assets/w/tile/thor/Pepperoni_Lovers_Pizza.png",
-    details: "A dank Cheeseburger",
-    price: "$10.99"
+   })
+    meals.insert({
+    name: "Rigatoni alla Amatriciana",
+    restaurant: "Italy Direct",
+    image: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT90dPsVxT0yVG-nhMInqHtU0pUTHCHvYxqqI1VezDTt0M8UfKS",
+    details: "Do You Even Know What Amatriciana Is, Cause It's Dank",
+    price: "$11.99",
+    rating: 4.7,
+    mealOptions: {"Extra Pecorino Romano": false}
 
-  })
-  MyData.insert({
-    name: "Pizza",
-    image: "https://www.pizzahut.com/assets/w/tile/thor/Pepperoni_Lovers_Pizza.png",
-    details: "Some dank pizza",
-    price: "$10.99"
+   })
+    meals.insert({
+    name: "Mutha Fuckin Crunchwrap Supreme",
+    restaurant: "T-Bell",
+    image: "http://media2.popsugar-assets.com/files/2015/03/25/038/n/1922195/7c49bba7_edit_img_image_1090627_1427242408_Crunchwrap_Supreme_SQUARE/i/Taco-Bell-Crunchwrap-Supreme-Recipe.jpg",
+    details: "A Dank-Ass Crunchwrap Supreme, Nuff Said",
+    price: "$3.99",
+    rating: 5.1,
+    mealOptions: {"Pefect As Is Or GTFO": true}
 
-  })
-  MyData.insert({
-    name: "Sandwich",
-    image: "https://www.pizzahut.com/assets/w/tile/thor/Pepperoni_Lovers_Pizza.png",
-    details: "A dank pizza Sandwich",
-    price: "$10.99"
+   })
+    meals.insert({
+    name: "Metal Ice Cream for Rich People",
+    restaurant: "Kanye's Dairy Farm",
+    image: "http://i.dailymail.co.uk/i/pix/2012/05/10/article-2142399-1304C591000005DC-401_468x577.jpg",
+    details: "Gold on My Chain, Gold on My Watch, Dank on my Ice Cream",
+    price: "$1000.00",
+    rating: 4.3,
+    mealOptions: {"Extra Gold": false, "Upgrade to Platinum": false}
 
-  })
-  MyData.insert({
-    name: "Cheeseburger",
-    image: "https://www.pizzahut.com/assets/w/tile/thor/Pepperoni_Lovers_Pizza.png",
-    details: "A dank Cheeseburger",
-    price: "$10.99"
+   })
+  meals.insert({
+    name: "Disapointment in a Bag",
+    restaurant: "Last Bag of Doritos in the Snack Bin",
+    image: "https://consumermediallc.files.wordpress.com/2012/06/threechips.jpg",
+    details: "You Had a Hankering for Doritos, Scumbag Steve Ate Them and Put Them Back",
+    price: "$0.00",
+    rating: 0.1,
+    mealOptions: {"Extra Disapointment": true, "Free Hate for Steve": true}
 
-  })
-  MyData.insert({
-    name: "Pizza",
-    image: "https://www.pizzahut.com/assets/w/tile/thor/Pepperoni_Lovers_Pizza.png",
-    details: "Some dank pizza",
-    price: "$10.99"
-
-  })
-  MyData.insert({
-    name: "Sandwich",
-    image: "https://www.pizzahut.com/assets/w/tile/thor/Pepperoni_Lovers_Pizza.png",
-    details: "A dank pizza Sandwich",
-    price: "$10.99"
-
-  })
-  MyData.insert({
-    name: "Cheeseburger",
-    image: "https://www.pizzahut.com/assets/w/tile/thor/Pepperoni_Lovers_Pizza.png",
-    details: "A dank Cheeseburger",
-    price: "$10.99"
-
-  })
-  MyData.insert({
-    name: "Pizza",
-    image: "https://www.pizzahut.com/assets/w/tile/thor/Pepperoni_Lovers_Pizza.png",
-    details: "Some dank pizza",
-    price: "$10.99"
-
-  })
-  MyData.insert({
-    name: "Sandwich",
-    image: "https://www.pizzahut.com/assets/w/tile/thor/Pepperoni_Lovers_Pizza.png",
-    details: "A dank pizza Sandwich",
-    price: "$10.99"
-
-  })
-  MyData.insert({
-    name: "Cheeseburger",
-    image: "https://www.pizzahut.com/assets/w/tile/thor/Pepperoni_Lovers_Pizza.png",
-    details: "A dank Cheeseburger",
-    price: "$10.99"
-
-  })
+   })
 }
 
 Meteor.startup(function() {
