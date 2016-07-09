@@ -36,7 +36,7 @@ Customize = React.createClass({
          <p>Lettuce<input type="checkbox" value="Hello!" defaultChecked/></p>
          <p>Lettuce<input type="checkbox" value="Hello!" defaultChecked/></p>
         <div className="bar bar-footer bar-assertive">
-          <ReactRouter.Link className="button button-bar" to={"/"}>CONTINUE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
+          <ReactRouter.Link className="button button-bar" to={"/orderMethod"}>CONTINUE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
             <span className = "icon ion-arrow-right-a"></span>
           </ReactRouter.Link>
         </div>

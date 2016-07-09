@@ -14,7 +14,6 @@ orderMethod = React.createClass({
   render() {
 	  return (
 	  	<div>
-		  	<h1> How will you pick up your food? </h1>
 		  	<div className= "buttons">
 	              <MyButton buttonClass="button button-block button-assertive" buttonText="Delivery"/>
 	              <MyButton buttonClass="button button-block button-calm" buttonText="Pick Up" />  

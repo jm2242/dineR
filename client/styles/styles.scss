@@ -20,3 +20,17 @@
 	position: absolute;
 	bottom: 0;
 }
+
+.container {
+	width:100%;
+	container:80%;
+}
+
+.column {
+	height:40.0%;
+	float:left;
+}
+
+.word-will-wrap {
+	word-wrap: break-word;
+}
