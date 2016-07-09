@@ -17,20 +17,23 @@ Customize = React.createClass({
     var options = [];
     var c = 0;
     for (var option in swipedMeal['mealOptions']) {
-      options.push('<p>'+option+'<input type="checkbox" value="'+c+'"'
-        +getCheckedValue(swipedMeal['mealOptions'].option)+
+      options.push('<p>'+option+'<input type="checkbox" value="'+c+'" '
+        +getCheckedValue(swipedMeal['mealOptions'][option])+
         '/></p>')
       c += 1;
     }
+    options = options.toString()
+    var regex = new RegExp(',', 'g');
+    options = options.replace(regex, '')
     return (
       <div className="">
         <div className="item item-divider">
           <h1>Customize</h1>
         </div>
         <h2>{swipedMeal['name']}</h2>
-        <div dangerouslySetInnerHTML={{__html: options}} />
+        <div dangerouslySetInnerHTML={{__html: options}} />    
         <div className="bar bar-footer bar-assertive">
-          <ReactRouter.Link className="button button-bar" to={"/orderMethod"}>CONTINUE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
+          <ReactRouter.Link className="button button-bar" to={"/"}>Order  
             <span className = "icon ion-arrow-right-a"></span>
           </ReactRouter.Link>
         </div>
@@ -41,7 +44,7 @@ Customize = React.createClass({
 
 function getCheckedValue(isChecked) {
   if (isChecked){
-    return "defaultChecked";
+    return "checked";
   }
   else {
     return "";
