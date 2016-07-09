@@ -125,14 +125,23 @@ Card = React.createClass({
       cardStyle.marginBottom = "-" + (document.getElementsByClassName("card")[0].offsetHeight + 20) + "px"
     }
     return (
-      <div className="card" onTouchStart={this.moveCardInit} onTouchMove={this.moveCard} onTouchEnd={this.moveCardEnd} style={cardStyle}>
-        <div className="item item-body">
-          <img className="full-image" src={this.props.card.image} />
+      <div className="">
+        <div className="">
+          <h1>Your Saved Items</h1>
         </div>
-        <div className="item">
-          <h2>{this.props.card.name}</h2>
-          <p>{this.props.card.details}</p>
-          <p>{this.props.card.price}</p>
+        <div className="card" onTouchStart={this.moveCardInit} onTouchMove={this.moveCard} onTouchEnd={this.moveCardEnd} style={cardStyle}>
+          <div className="item item-body">
+            <img className="full-image" src={this.props.card.image} />
+          </div>
+          <div className="item">
+            <h2>{this.props.card.name}</h2>
+            <p>{this.props.card.details}</p>
+            <p>{this.props.card.price}</p>
+          </div>
+          <div className="button-bar">
+            <MyButton clickHandler={this.handleFunc} buttonClass="button button-block button-assertive icon ion-close-round" /> 
+            <MyButton clickHandler={this.handleFunc} buttonClass="button button-block button-balanced icon ion-checkmark-round" />
+          </div>
         </div>
       </div>
     )
