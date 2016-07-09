@@ -1,17 +1,19 @@
 ---Contributors on dineR---
 
-Software Developers:
-Some homo
-Jonathan Mares
+Software Developers/Pokemon Go Trainers:
+Logan Nathanson
 Ash Kumar
 
-Business Persons:
+Software Developer/Alcohlic:
+Jonathan Mares
+
+Business Persons/Business Persons:
 Nick Dunlap
 
-Expert Sleeper:
+Expert Sleeper/Vim Expert:
 Savage Sy
 
-Pokemon Go Players:
+Junior Developer/Pokemon Go Trainee:
 Kevin McKeever
 
 ---Contributors on dineR---

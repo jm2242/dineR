@@ -8,6 +8,23 @@ Card = React.createClass({
       dragging: "none"
     }
   },
+  componentDidMount: function () {
+    $.fn.stars = function() {
+      return $(this).each(function() {
+        // Get the value
+        var val = parseFloat($(this).html());
+        // Make sure that the value is in 0 - 5 range, multiply to get width
+        var size = Math.max(0, (Math.min(5, val))) * 16;
+        // Create stars holder
+        var $span = $('<span />').width(size);
+        // Replace the numerical value with stars
+        $(this).html($span);
+      });
+    } 
+    $(function() {
+      $('span.stars').stars();
+    });
+  },
   clickSavedMeal(e) {
     e.preventDefault()
     this.setState({
@@ -82,7 +99,6 @@ Card = React.createClass({
   },
   handleFunc(e) {
     e.preventDefault()
-    debugger
   },
   render() {
     let cardStyle = {
@@ -109,7 +125,7 @@ Card = React.createClass({
           <div className="item">
             <h2>{this.props.card.name}</h2>
             <p>{this.props.card.price}</p>
-            <p>{this.props.card.rating} Stars</p>
+            <span className="stars">{this.props.card.rating}</span>
             <p>1.2 miles</p>
           </div>
           <div className="item word-will-wrap">
