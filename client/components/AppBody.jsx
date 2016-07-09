@@ -5,7 +5,7 @@ AppBody = React.createClass({
         <div className="bar bar-header bar-light">
           <ReactRouter.Link className="button button-icon icon ion-gear-a" to={"/settings"}></ReactRouter.Link>
           <ReactRouter.Link className="h1 title" to={"/"}>App Name</ReactRouter.Link>
-          <ReactRouter.Link className="button button-icon icon ion-heart" to={"/other"}></ReactRouter.Link>
+          <ReactRouter.Link className="button button-icon icon ion-heart" to={"/order"}></ReactRouter.Link>
         </div>
 
         <div className="view">
@@ -15,7 +15,7 @@ AppBody = React.createClass({
             </div>
           </div>
         </div>
-      </div>
+      </div> 
     )
   }
 })

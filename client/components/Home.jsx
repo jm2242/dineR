@@ -4,6 +4,7 @@ document.addEventListener("touchstart", function(){}, false)
 
 Home = React.createClass({
   mixins: [ReactMeteorData],
+  contextTypes: {router: React.PropTypes.object.isRequired},
   getMeteorData() {
     let handle = Meteor.subscribe("myData")
     let data = MyData.find().fetch()
@@ -16,10 +17,10 @@ Home = React.createClass({
     MyData.remove(_id)
     Meteor.call("repopulate")
   },
-  setAffirmative(_id) {
+  orderItem(_id) {
     MyData.update({_id}, {$set: { affirmative: true}})
-    Meteor.call("repopulate")
-    this.context.router.transitionTo('/other')
+    Meteor.call("repopulate");
+    this.context.router.transitionTo('/order');
   },
   renderCards() {
     return this.data.users
@@ -29,7 +30,7 @@ Home = React.createClass({
           key={card._id}
           card={card}
           remove={ () => this.removeCard(card._id)}
-          setAffirmative={ () => this.setAffirmative(card._id)}
+          orderItem={ () => this.orderItem(card._id)}
         />
     })
   },
@@ -83,7 +84,8 @@ Card = React.createClass({
         y: 0,
         dragging: "all 0.5s ease"
       })
-      Meteor.setTimeout(this.props.setAffirmative, 500)
+      //Add to favorites list
+      Meteor.setTimeout(this.props.orderItem, 500)
     } else {
       this.setState({
         x: 0,
