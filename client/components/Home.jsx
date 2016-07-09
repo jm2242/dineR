@@ -22,6 +22,35 @@ Home = React.createClass({
     //Meteor.call("repopulate");
     this.context.router.transitionTo('/order');
   },
+  orderButtonClicked(e) {
+    e.preventDefault()
+    this.setState({
+        x: 1000,
+        y: 0,
+        dragging: "all 0.5s ease"
+      })
+      //Add to favorites list
+      Meteor.setTimeout(this.orderItem(this.data.newMeal[0]._id), 500)
+  },
+  xButtonClicked(e) {
+    e.preventDefault()
+    this.setState({
+        x: -1000,
+        y: 0,
+        dragging: "all 0.5s ease"
+      })
+      Meteor.setTimeout(this.removeCard(this.data.newMeal[0]._id), 500)
+  },
+  clickSavedMeal(e) {
+    e.preventDefault()
+    this.setState({
+        x: 0,
+        y: -1000,
+        dragging: "all 0.5s ease"
+      })
+    Meteor.setTimeout(this.props.remove, 500)
+    savedMeals.insert(this.props.card)
+  },
   renderCards() {
     return this.data.newMeal
       .map((card) => {
@@ -37,6 +66,13 @@ Home = React.createClass({
     if (this.data.loading) {
       return <h1>Loading</h1>
     }
-    return <div>{this.renderCards()}</div>
+    return <div>
+            {this.renderCards()}
+            <div className="float-bottom button-bar">
+              <MyButton clickHandler={this.xButtonClicked} buttonClass="button button-block button-assertive icon ion-close-round" /> 
+              <MyButton clickHandler={this.clickSavedMeal} buttonClass="button button-block button-calm icon ion-heart" />   
+              <MyButton clickHandler={this.orderButtonClicked} buttonClass="button button-block button-balanced icon ion-checkmark-round" />
+            </div>
+           </div>
   }
 })
