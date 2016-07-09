@@ -12,6 +12,9 @@ Customize = React.createClass({
     Meteor.call('reset')
   },
   render() {
+  console.log(this.props);
+  let swipedMeal = meals.findOne({_id: this.props.params.mealId});
+  debugger;
   //   if (this.data.loading) {
   //     return <h1>Loading</h1>
   //   }
@@ -25,16 +28,18 @@ Customize = React.createClass({
   //     )
   //   })
     return (
-      <div className="list">
+      <div className="">
         <div className="item item-divider">
-          <h1>Customize</h1>
+          <h1>Customize Your </h1>
         </div>
          <p>Lettuce<input type="checkbox" value="Hello!" defaultChecked/></p>
          <p>Lettuce<input type="checkbox" value="Hello!" defaultChecked/></p>
          <p>Lettuce<input type="checkbox" value="Hello!" defaultChecked/></p>
          <p>Lettuce<input type="checkbox" value="Hello!" defaultChecked/></p>
         <div className="bar bar-footer bar-assertive">
-          <h1>Order</h1>
+          <ReactRouter.Link className="button button-bar" to={"/"}>CONTINUE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
+            <span className = "icon ion-arrow-right-a"></span>
+          </ReactRouter.Link>
         </div>
       </div>
     )
