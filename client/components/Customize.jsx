@@ -14,35 +14,32 @@ Customize = React.createClass({
   render() {
   console.log(this.props);
   let swipedMeal = meals.findOne({_id: this.props.params.mealId});
-  debugger;
-  //   if (this.data.loading) {
-  //     return <h1>Loading</h1>
-  //   }
-  //   let list = this.data.users.map((user) => {
-  //     return (
-  //       <div className="item item-avatar" key={user._id}>
-  //         <img src={user.image}></img>
-  //         <h2>{user.name}</h2>
-  //         <p>{user.details}</p>
-  //       </div>
-  //     )
-  //   })
     return (
       <div className="">
         <div className="item item-divider">
-          <h1>Customize Your </h1>
+          <h1>Customize</h1>
         </div>
+        <h2>{swipedMeal['name']}</h2>
          <p>Lettuce<input type="checkbox" value="Hello!" defaultChecked/></p>
          <p>Lettuce<input type="checkbox" value="Hello!" defaultChecked/></p>
          <p>Lettuce<input type="checkbox" value="Hello!" defaultChecked/></p>
          <p>Lettuce<input type="checkbox" value="Hello!" defaultChecked/></p>
         <div className="bar bar-footer bar-assertive">
-          <ReactRouter.Link className="button button-bar" to={"/"}>CONTINUE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
+          <ReactRouter.Link className="button button-bar" to={"/"}>Order  
             <span className = "icon ion-arrow-right-a"></span>
           </ReactRouter.Link>
         </div>
       </div>
     )
   }
-  //mealOptions: {"Ingredient" : true, "Ingredient2" : false}
 });
+
+  // meals.insert({
+  //   name: "California Roll",
+  //   restaurant: "Miyagi Mansion",
+  //   image: "http://www.mnpr.biz/wp-content/uploads/2012/12/California-Roll-1.jpg",
+  //   details: "Sushi made only with the dankest of fake crab",
+  //   price: "$8.99",
+  //   rating: 4.5,
+  //   mealOptions: {"Soy Sauce" : true, "Wasabi" : true, "Pickeled Ginger" : true}
+  // })
