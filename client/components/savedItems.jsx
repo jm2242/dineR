@@ -37,6 +37,9 @@ savedItems = React.createClass({
     if (this.data.loading) {
       return <h1>Loading</h1>
     }
+    if(!this.data.savedMeals.length) {
+      return <div>No Saved Meals</div>
+    }
     return <div>{this.renderCards()}</div>
   }
 })
