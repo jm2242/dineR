@@ -12,36 +12,38 @@ Customize = React.createClass({
     Meteor.call('reset')
   },
   render() {
-  console.log(this.props);
-  let swipedMeal = meals.findOne({_id: this.props.params.mealId});
-  //   if (this.data.loading) {
-  //     return <h1>Loading</h1>
-  //   }
-  //   let list = this.data.users.map((user) => {
-  //     return (
-  //       <div className="item item-avatar" key={user._id}>
-  //         <img src={user.image}></img>
-  //         <h2>{user.name}</h2>
-  //         <p>{user.details}</p>
-  //       </div>
-  //     )
-  //   })
+    console.log(this.props);
+    let swipedMeal = meals.findOne({_id: this.props.params.mealId});
+    var options = [];
+    var c = 0;
+    for (var option in swipedMeal['mealOptions']) {
+      options.push('<p>'+option+'<input type="checkbox" value="'+c+'"'
+        +getCheckedValue(swipedMeal['mealOptions'].option)+
+        '/></p>')
+      c += 1;
+    }
     return (
       <div className="">
         <div className="item item-divider">
-          <h1>Customize Your </h1>
+          <h1>Customize</h1>
         </div>
-         <p>Lettuce<input type="checkbox" value="Hello!" defaultChecked/></p>
-         <p>Lettuce<input type="checkbox" value="Hello!" defaultChecked/></p>
-         <p>Lettuce<input type="checkbox" value="Hello!" defaultChecked/></p>
-         <p>Lettuce<input type="checkbox" value="Hello!" defaultChecked/></p>
+        <h2>{swipedMeal['name']}</h2>
+        <div dangerouslySetInnerHTML={{__html: options}} />
         <div className="bar bar-footer bar-assertive">
-          <ReactRouter.Link className="button button-bar" to={"/"}>CONTINUE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
+          <ReactRouter.Link className="button button-bar" to={"/"}>Order  
             <span className = "icon ion-arrow-right-a"></span>
           </ReactRouter.Link>
         </div>
       </div>
     )
   }
-  //mealOptions: {"Ingredient" : true, "Ingredient2" : false}
 });
+
+function getCheckedValue(isChecked) {
+  if (isChecked){
+    return "defaultChecked";
+  }
+  else {
+    return "";
+  }
+}
