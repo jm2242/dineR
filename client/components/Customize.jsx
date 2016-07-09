@@ -23,7 +23,8 @@ Customize = React.createClass({
       c += 1;
     }
     options = options.toString()
-    options.replace(/,/g, '')
+    var regex = new RegExp(',', 'g');
+    options = options.replace(regex, '')
     return (
       <div className="">
         <div className="item item-divider">
