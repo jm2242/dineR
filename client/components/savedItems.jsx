@@ -47,7 +47,12 @@ savedItems = React.createClass({
     if (this.data.loading) {
       return <h1>Loading</h1>
     }
-    return <div>{this.renderSavedCards()}</div>
+    return <div>
+              <div className="">
+                <h4>Your Saved Items</h4>
+              </div>
+              {this.renderSavedCards()}
+            </div>
   }
 })
 
@@ -55,14 +60,20 @@ Card = React.createClass({
   getInitialState() {
     return {
       x: 0,
-      y: 0,
+      y: -20,
       initialX: 0,
       initialY: 0,
       dragging: "none"
     }
   },
-  clickSavedMeal() {
-    e.preventDefault();
+  clickSavedMeal(e) {
+    e.preventDefault()
+    this.setState({
+        x: 0,
+        y: -1000,
+        dragging: "all 0.5s ease"
+      })
+    Meteor.setTimeout(this.props.remove, 500)
     savedMeals.insert(this.props.card)
   },
   moveCardInit(e) {
@@ -81,6 +92,25 @@ Card = React.createClass({
       x: deltaX,
       y: deltaY
     })
+  },
+  xButtonClicked(e) {
+    e.preventDefault()
+    this.setState({
+        x: -1000,
+        y: 0,
+        dragging: "all 0.5s ease"
+      })
+      Meteor.setTimeout(this.props.remove, 500)
+  },
+  orderButtonClicked(e) {
+    e.preventDefault()
+    this.setState({
+        x: 1000,
+        y: 0,
+        dragging: "all 0.5s ease"
+      })
+      //Add to favorites list
+      Meteor.setTimeout(this.props.orderItem, 500)
   },
   moveCardEnd(e) {
     e.preventDefault()
@@ -125,14 +155,21 @@ Card = React.createClass({
       cardStyle.marginBottom = "-" + (document.getElementsByClassName("card")[0].offsetHeight + 20) + "px"
     }
     return (
-      <div className="card" onTouchStart={this.moveCardInit} onTouchMove={this.moveCard} onTouchEnd={this.moveCardEnd} style={cardStyle}>
-        <div className="item item-body">
-          <img className="full-image" src={this.props.card.image} />
+      <div className="">
+        <div className="card" onTouchStart={this.moveCardInit} onTouchMove={this.moveCard} onTouchEnd={this.moveCardEnd} style={cardStyle}>
+          <div className="item item-body">
+            <img className="full-image" src={this.props.card.image} />
+          </div>
+          <div className="item">
+            <h2>{this.props.card.name}</h2>
+            <p>{this.props.card.details}</p>
+            <p>{this.props.card.price}</p>
+          </div>
         </div>
-        <div className="item">
-          <h2>{this.props.card.name}</h2>
-          <p>{this.props.card.details}</p>
-          <p>{this.props.card.price}</p>
+        <div className="float-bottom button-bar">
+          <MyButton clickHandler={this.xButtonClicked} buttonClass="button button-block button-assertive icon ion-close-round" /> 
+          <MyButton clickHandler={this.clickSavedMeal} buttonClass="button button-block button-calm icon ion-heart" />   
+          <MyButton clickHandler={this.orderButtonClicked} buttonClass="button button-block button-balanced icon ion-checkmark-round" />
         </div>
       </div>
     )
