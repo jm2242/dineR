@@ -1,6 +1,14 @@
 orderPlaced = React.createClass({
   render() {
   	 let swipedMeal = meals.findOne({_id: this.props.params.mealId});
+  	 submittedOrders.insert({
+    	customerName: "Billy",
+    	customerLocation: "2346",
+    	meal: swipedMeal.name,
+    	delivered: false,
+    	orderPrice: swipedMeal.price,
+    	orderMethod: "delivery",
+    })
     return (
     	<div className="">
     		<h3>Your Order is on the way!</h3>

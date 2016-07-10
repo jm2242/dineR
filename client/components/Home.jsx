@@ -7,8 +7,15 @@ Home = React.createClass({
   contextTypes: {router: React.PropTypes.object.isRequired},
   getMeteorData() {
     let handle = Meteor.subscribe("meals")
-    let newMeal = [meals.findOne( { affirmative: { $ne: true }})]
-    return {
+    let newMeal = [meals.findOne( { affirmative: { $ne: true }})]
+    if (this.props.params.filterOption === "allItemsFilter") {
+       newMeal = [meals.findOne( {affirmative: { $ne: true }})]
+    } else if (this.props.params.filterOption === "savedItemsFilter") {
+       newMeal = [savedMeals.findOne( {affirmative: { $ne: true }})]
+    } else if (this.props.params.filterOption === "restaurantSpecialsFilter") {
+      //Fix this
+    }
+  return {
       loading: !handle.ready(),
       newMeal: newMeal,
     }
