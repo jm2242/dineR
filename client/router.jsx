@@ -1,6 +1,6 @@
 const routes = (
   <ReactRouter.Route name="root" handler={AppBody}>
-    <ReactRouter.Route name="home" path="/" handler={Home} />
+    <ReactRouter.Route name="home" path="/home/?:filterOption?" handler={Home} />
     <ReactRouter.Route name="other" path="/order" handler={Order} />
     <ReactRouter.Route name="customize" path="/customize/:mealId" handler={Customize}/>
     <ReactRouter.Route name="settings" path="/settings" handler={Settings} />

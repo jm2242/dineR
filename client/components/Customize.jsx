@@ -12,8 +12,14 @@ Customize = React.createClass({
     Meteor.call('reset')
   },
   render() {
-    console.log(this.props);
-    let swipedMeal = meals.findOne({_id: this.props.params.mealId});
+    if (this.props.params.mealId == undefined)
+    {
+      return <h1> Error</h1>
+    }
+    let swipedMeal = meals.findOne({_id: this.props.params.mealId}) || 
+                     savedMeals.findOne({_id: this.props.params.mealId}) ||
+                     specialMeals.findOne( {_id: this.props.params.mealId});
+
     var options = [];
     var c = 0;
     for (var option in swipedMeal['mealOptions']) {

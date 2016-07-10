@@ -7,16 +7,30 @@ Home = React.createClass({
   contextTypes: {router: React.PropTypes.object.isRequired},
   getMeteorData() {
     let handle = Meteor.subscribe("meals")
-    let newMeal = [meals.findOne( { affirmative: { $ne: true }})]
-    return {
+    let newMeal = [meals.findOne( { affirmative: { $ne: true }})]
+    if (this.props.params.filterOption === "allItemsFilter") {
+       newMeal = [meals.findOne( {affirmative: { $ne: true }})]
+    } else if (this.props.params.filterOption === "savedItemsFilter") {
+       newMeal = [savedMeals.findOne()]
+    } else if (this.props.params.filterOption === "restaurantSpecialsFilter") {
+       newMeal = [specialMeals.findOne()]
+    }
+  return {
       loading: !handle.ready(),
       newMeal: newMeal,
     }
   },
   removeCard(_id) {
-    meals.remove(_id)
+  if (this.props.params.filterOption === "SavedItemsFilter") {
+
+  } else {
+    meals.remove(_id)
+  }
     //Meteor.call("repopulate")
   },
+  updateCard(_id) {
+    meals.update({_id}, {$set: { affirmative: true}});
+  },
   orderItem(_id) {
     meals.update({_id}, {$set: { affirmative: true}})
     //Meteor.call("repopulate");
@@ -48,7 +62,8 @@ Home = React.createClass({
         y: -1000,
         dragging: "all 0.5s ease"
       })
-    Meteor.setTimeout(this.removeCard(this.data.newMeal[0]._id), 500)
+    Meteor.setTimeout(this.updateCard(this.data.newMeal[0]._id), 500);
+
     savedMeals.insert(this.data.newMeal[0])
   },
   renderCards() {
