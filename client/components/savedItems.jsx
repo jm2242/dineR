@@ -38,11 +38,11 @@ removeButtonClicked() {
       )
     })
     return (
-      <div className="list">
-        <div className="item item-divider" align="center">
-          <h1>Saved Items</h1>
+      <div>
+        <h1 className="title">Saved Items</h1>
+        <div className="list">
+          {list}
         </div>
-        {list}
       </div>
     )
   }

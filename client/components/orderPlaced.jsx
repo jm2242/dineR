@@ -65,7 +65,7 @@ orderPlaced = React.createClass({
 
     return (
     	<div className="">
-    		<h3>Your Order is on the way!</h3>
+    		<h3 className="title">Your Order is on the way!</h3>
     		<CountdownTimer initialTimeRemaining={this.state.time} />
     		<div className="card container">
 	          <div className="item item-body column">

@@ -18,7 +18,6 @@ orderPickup = React.createClass({
 	    var query = 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=' + originStr + '&destinations=' + destinationStr;
 
 	    Meteor.call('getDistance', query, function successCallback(error, result) {
-	    	debugger;
 	        if(error) {          
 	            $('.timer').hide()
 	        }
@@ -66,7 +65,7 @@ orderPickup = React.createClass({
 
     return (
     	<div className="">
-    		<h3>Your Order has been placed!</h3>
+    		<h3 className="title">Your Order has been placed!</h3>
     		<CountdownTimer initialTimeRemaining={this.state.time} />
     		<div className="card container">
 	          <div className="item item-body column">
