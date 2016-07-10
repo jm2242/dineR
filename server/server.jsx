@@ -1,7 +1,9 @@
 Meteor.publish("meals", function() {
   return meals.find()
 })
-
+Meteor.startup(function () {
+  process.env.MAIL_URL = 'smtp://postmaster@sandbox624ad9a11d5647ee82c00c84ff7b2ddf.mailgun.org:31984d87e9a154aff51093b79c45507e@smtp.mailgun.org:587';
+})
 Meteor.methods({
   sendEmail: function (to, from, subject, text) {
     check([to, from, subject, text], [String]);
