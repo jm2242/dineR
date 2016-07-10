@@ -145,7 +145,7 @@ Card = React.createClass({
       <div className="">
         <div className="card container" onTouchStart={this.moveCardInit} onTouchMove={this.moveCard} onTouchEnd={this.moveCardEnd} style={cardStyle}>
           <div className="item item-body column">
-            <img className="full-image column" src={this.props.card.image} />
+            <img className="card-image" src={this.props.card.image} />
           </div>
           <div className="item">
             <h2>{this.props.card.name}</h2>
