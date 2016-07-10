@@ -36,7 +36,7 @@ populate = function() {
     details: "Sushi made only with the dankest of fake crab",
     price: "$8.99",
     rating: 4.5,
-    location: {"latitude" 42.361597, "longitude" -71.0627},
+    location: {"latitude": 42.361597, "longitude": -71.0627},
     mealOptions: {"Soy Sauce" : true, "Wasabi" : true, "Pickeled Ginger" : true}
   })
   meals.insert({
@@ -46,7 +46,7 @@ populate = function() {
     details: "Dank rice, dank peas and normal carrots ",
     price: "$5.99",
     rating: 3.1,
-    location: {"latitude" 42.362597, "longitude" -71.0617},
+    location: {"latitude": 42.362597, "longitude": -71.0617},
     mealOptions: {"Peas" : true, "Carrots" : true, "Beef" : true, "Chicken" : false, "Shrimp" : false}
   })
   meals.insert({
@@ -56,7 +56,7 @@ populate = function() {
     details: "A dank Burrito from the dankest kitchen",
     price: "$7.99",
     rating: 4.5,
-    location: {"latitude" 42.364597, "longitude" -71.0597},
+    location: {"latitude": 42.364597, "longitude": -71.0597},
     mealOptions: {"Guacomole" : false, "Salsa" : false, "Sour Cream" : false}
   })
   meals.insert({
@@ -66,7 +66,7 @@ populate = function() {
     details: "Dank cream with dank flavor",
     price: "$4.99",
     rating: 4.7,
-    location: {"latitude" 42.42597, "longitude" -71.0617},
+    location: {"latitude": 42.42597, "longitude": -71.0617},
     mealOptions: {"Chocolate Chips" : false, "Waffle Cone" : false, "Caramel" : false}
   })
   meals.insert({
@@ -76,7 +76,7 @@ populate = function() {
     details: "Salmon that climbed the waterfall to dankhood",
     price: "$13.99",
     rating: 4.3,
-    location: {"latitude" 42.41597, "longitude" -71.117},
+    location: {"latitude": 42.41597, "longitude": -71.117},
     mealOptions: {}
   })
   meals.insert({
@@ -86,7 +86,7 @@ populate = function() {
     details: "Delicious nachos filled with various toppings. Dank.",
     price: "$6.99",
     rating: 3.9,
-    location: {"latitude" 42.40597, "longitude" -71.2317},
+    location: {"latitude": 42.40597, "longitude": -71.2317},
     mealOptions: {"Salsa" : true, "Cheese" : true, "Beef" : true, "Guacamole" : false, "Jalapeno" : false}
   })
   meals.insert({
@@ -96,7 +96,7 @@ populate = function() {
     details: "A creamy and dank cake",
     price: "$19.99",
     rating: 4.7,
-    location: {"latitude" 42.42597, "longitude" -71.0617},
+    location: {"latitude": 42.42597, "longitude": -71.0617},
     mealOptions: {}
   })
   meals.insert({
@@ -106,7 +106,7 @@ populate = function() {
     details: "A dank soup with the dankest noodles",
     price: "$8.99",
     rating: 4.0,
-    location: {"latitude" 42.33531, "longitude" -71.039799},
+    location: {"latitude": 42.33531, "longitude": -71.039799},
     mealOptions: {"Eggs" : true}
   })
   meals.insert({
@@ -115,7 +115,7 @@ populate = function() {
     image: "http://www.incredibleegg.org/wp-content/uploads/ham_cheese_omelette_930x5502-930x550.jpg",
     details: "Some dank eggs and ham plus cheese",
     price: "$7.99",
-    location: {"latitude" 42.33597, "longitude" -71.2417},
+    location: {"latitude": 42.33597, "longitude": -71.2417},
     mealOptions:{"Ham" : true, "Cheese" : true, "Green Onions" : true}
   })
   meals.insert({
@@ -124,7 +124,7 @@ populate = function() {
     image: "https://foodimentaryguy.files.wordpress.com/2014/06/lohiscreations-com.jpg",
     details: "Strawberries from the dank fields and fresh yogurt",
     price: "$3.99",
-    location: {"latitude" 42.32597, "longitude" -71.2529},
+    location: {"latitude": 42.32597, "longitude": -71.2529},
     mealOptions: {}
   })
   meals.insert({
@@ -133,7 +133,7 @@ populate = function() {
     image: "http://canadianhometrends.com/wp-content/uploads/2014/04/white-choco-maca1.jpg",
     details: "Cookies for the dankest of children",
     price: "$5.99",
-    location: {"latitude" 42.34097, "longitude" -71.067177},
+    location: {"latitude": 42.34097, "longitude": -71.067177},
     mealOptions: {}
  })
  meals.insert({
@@ -143,7 +143,7 @@ populate = function() {
     details: "A dank Pad See Ew",
     price: "$12.99",
     rating: 4.2,
-    location: {"latitude" 42.34597, "longitude" -71.0740},
+    location: {"latitude": 42.34597, "longitude": -71.0740},
     mealOptions: {}
   })
   meals.insert({
@@ -153,7 +153,7 @@ populate = function() {
     details: "Bacon...Dank",
     price: "$4.99",
     rating: 5.0,
-    location: {"latitude" 42.40587, "longitude" -71.2317},
+    location: {"latitude": 42.40587, "longitude": -71.2317},
     mealOptions: {"Crispy": false, "Extra Bacon": false}
   })
   meals.insert({
@@ -163,7 +163,7 @@ populate = function() {
     details: "A Bacon Cheeseburger with a Dank Egg",
     price: "$10.99",
     rating: 4.8,
-    location: {"latitude" 42.40617, "longitude" -71.2367},
+    location: {"latitude": 42.40617, "longitude": -71.2367},
     mealOptions: {"Garlic Aioli": true, "Fried Egg": true, "Onion": true, "turkey burger": false }
   })
   meals.insert({
@@ -173,7 +173,7 @@ populate = function() {
     details: "Chicken with Hint of Orange and Dank",
     price: "$11.99",
     rating: 4.3,
-    location: {"latitude" 42.40617, "longitude" -71.2397},
+    location: {"latitude": 42.40617, "longitude": -71.2397},
     mealOptions: {}
   })
   meals.insert({
@@ -183,7 +183,7 @@ populate = function() {
     details: "Sweet Sweet Dank",
     price: "$6.99",
     rating: 4.1,
-    location: {"latitude" 42.336676, "longitude" -71.072159},
+    location: {"latitude": 42.336676, "longitude": -71.072159},
     mealOptions: {}
   })
     meals.insert({
@@ -193,7 +193,7 @@ populate = function() {
     details: "Dank Glaze for a Dank Steak",
     price: "$17.99",
     rating: 4.4,
-    location: {"latitude" 42.3407, "longitude" -71.054306},
+    location: {"latitude": 42.3407, "longitude": -71.054306},
     mealOptions: {}
   })
     meals.insert({
@@ -203,7 +203,7 @@ populate = function() {
     details: "We Double Dare you to find Danker Pork",
     price: "$13.99",
     rating: 4.2,
-    location: {"latitude" 42.318400, "longitude" -71.102371},
+    location: {"latitude": 42.318400, "longitude": -71.102371},
     mealOptions: {}
   })
     meals.insert({
@@ -213,7 +213,7 @@ populate = function() {
     details: "Dank from Under the Tuscan Sun",
     price: "$11.99",
     rating: 4.9,
-    location: {"latitude" 42.318400, "longitude" -71.102159},
+    location: {"latitude": 42.318400, "longitude": -71.102159},
     mealOptions: {"Extra Pecorino Romano": false}
   })
     meals.insert({
@@ -223,7 +223,7 @@ populate = function() {
     details: "Eggplant, Never Been a Danker Vegetable",
     price: "$8.99",
     rating: 3.9,
-    location: {"latitude" 42.348856, "longitude" -71.066665},
+    location: {"latitude": 42.348856, "longitude": -71.066665},
     mealOptions: {"Extra Bread": false}
    })
     meals.insert({
@@ -233,7 +233,7 @@ populate = function() {
     details: "Do You Even Know What Amatriciana Is, Cause It's Dank",
     price: "$11.99",
     rating: 4.7,
-    location: {"latitude" 42.336676, "longitude" -71.072159},
+    location: {"latitude": 42.336676, "longitude": -71.072159},
     mealOptions: {"Extra Pecorino Romano": false}
    })
     meals.insert({
@@ -243,7 +243,7 @@ populate = function() {
     details: "A Dank-Ass Crunchwrap Supreme, Nuff Said",
     price: "$3.99",
     rating: 5.1,
-    location: {"latitude" 42.378282, "longitude" -71.0364},
+    location: {"latitude": 42.378282, "longitude": -71.0364},
     mealOptions: {"Pefect As Is Or GTFO": true}
    })
     meals.insert({
@@ -253,7 +253,7 @@ populate = function() {
     details: "Gold on My Chain, Gold on My Watch, Dank on my Ice Cream",
     price: "$1000.00",
     rating: 4.3,
-    location: {"latitude" 42.33769, "longitude" -71.032333},
+    location: {"latitude": 42.33769, "longitude": -71.032333},
     mealOptions: {"Extra Gold": false, "Upgrade to Platinum": false}
    })
   meals.insert({
@@ -263,7 +263,7 @@ populate = function() {
     details: "You Had a Hankering for Doritos, Scumbag Steve Ate Them and Put Them Back",
     price: "$0.00",
     rating: 0.1,
-    location: {"latitude" 42.260494, "longitude" -71.077652},
+    location: {"latitude": 42.260494, "longitude": -71.077652},
     mealOptions: {"Extra Disapointment": true, "Free Hate for Steve": true}
    })
 }
