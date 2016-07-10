@@ -10,6 +10,7 @@ orderPickup = React.createClass({
     	<div className="">
     		<h3>Your Order has been placed!</h3>
     		<h5>It will be ready in 6 minutes!</h5>
+    		<CountdownTimer initialTimeRemaining={10000} />
     		<div className="card container">
 	          <div className="item item-body column">
 	            <img className="full-image column" src={swipedMeal.image} />
