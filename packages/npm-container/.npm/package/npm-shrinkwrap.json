@@ -287,6 +287,19 @@
         }
       }
     },
+    "react-google-map": {
+      "version": "1.0.1",
+      "dependencies": {
+        "react-google-maps-loader": {
+          "version": "1.0.1",
+          "dependencies": {
+            "scriptjs": {
+              "version": "2.5.8"
+            }
+          }
+        }
+      }
+    },
     "react-router": {
       "version": "0.13.3",
       "dependencies": {

@@ -124,7 +124,7 @@ Card = React.createClass({
           </div>
           <div className="item">
             <h2>{this.props.card.name}</h2>
-            <h3>From: {this.props.card.restaurant}</h3>
+            <h3>{this.props.card.restaurant}</h3>
             <p>{this.props.card.price}</p>
             <span className="stars">{this.props.card.rating}</span>
             <p>1.2 miles</p>
