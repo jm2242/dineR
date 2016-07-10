@@ -30,11 +30,16 @@ Home = React.createClass({
   },
   updateCard(_id) {
     meals.update({_id}, {$set: { affirmative: true}});
+    // savedMeals.insert(this.data.newMeal[0])
   },
   orderItem(_id) {
     meals.update({_id}, {$set: { affirmative: true}})
     //Meteor.call("repopulate");
     this.context.router.transitionTo('/customize' +'/' + _id);
+  },
+  saveItem(_id) {
+    meals.update({_id}, {$set: { affirmative: true}})
+    savedMeals.insert(this.data.newMeal[0])
   },
   orderButtonClicked(e) {
     e.preventDefault()
@@ -62,9 +67,8 @@ Home = React.createClass({
         y: -1000,
         dragging: "all 0.5s ease"
       })
-    Meteor.setTimeout(this.updateCard(this.data.newMeal[0]._id), 500);
+    Meteor.setTimeout(this.saveItem(this.data.newMeal[0]._id), 500);
 
-    savedMeals.insert(this.data.newMeal[0])
   },
   renderCards() {
     return this.data.newMeal
@@ -74,6 +78,7 @@ Home = React.createClass({
           card={card}
           remove={ () => this.removeCard(card._id)}
           orderItem={ () => this.orderItem(card._id)}
+          saveItem={ () => this.saveItem(card._id)}
         ></Card>
     })
   },

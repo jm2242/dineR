@@ -112,9 +112,16 @@ Card = React.createClass({
         y: 0,
         dragging: "all 0.5s ease"
       })
-      //Add to favorites list
       Meteor.setTimeout(this.props.orderItem, 500)
-    } else {
+    } else if (e.changedTouches[0].pageY < 100) {
+      this.setState({
+        x: 0,
+        y: -1000,
+        dragging: "all 0.5s ease"
+      })
+      Meteor.setTimeout(this.props.saveItem, 500)
+    }
+     else {
       this.setState({
         x: 0,
         y: 0,
