@@ -1,5 +1,6 @@
 orderPickup = React.createClass({
   render() {
+  	//Meteor.call('textRemind');
   	Meteor.call('sendEmail',
 	      'atsy314@gmail.com',
 	      'atsy314@gmail.com',
