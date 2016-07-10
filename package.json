@@ -1,0 +1,21 @@
+{
+  "name": "dineR",
+  "version": "1.0.0",
+  "description": "This is kind of a tinder clone. Just the animations mostly.",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "DEPLOY_HOSTNAME=galaxy.meteor.com meteor deploy diner.meteorapp.com --settings settings.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jm2242/dineR.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jm2242/dineR/issues"
+  },
+  "homepage": "https://github.com/jm2242/dineR#readme"
+}
