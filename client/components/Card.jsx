@@ -5,7 +5,8 @@ Card = React.createClass({
       y: 0,
       initialX: 0,
       initialY: 0,
-      dragging: "none"
+      dragging: "none",
+      distance: ""
     }
   },
   componentDidMount: function () {
@@ -24,6 +25,26 @@ Card = React.createClass({
     $(function() {
       $('span.stars').stars();
     });
+
+    var restaurantLocation = this.props.card.location;
+    var self = this;
+    navigator.geolocation.getCurrentPosition(function (currentLocation) {
+    var originStr = currentLocation.coords.latitude + ',' + currentLocation.coords.longitude;
+    var destinationStr = restaurantLocation.latitude + ',' + restaurantLocation.longitude;
+    var query = 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=' + originStr + '&destinations=' + destinationStr;
+
+    Meteor.call('getDistance', query, function(error, result) {
+        if(error) {
+          self.setState({
+            distance: 'Can\'t get distance'
+          })
+        }
+        var jsonResult = JSON.parse(result)
+        self.setState({
+          distance: jsonResult.rows[0].elements[0].distance.text
+        })
+      });
+    })
   },
   clickSavedMeal(e) {
     e.preventDefault()
@@ -127,7 +148,7 @@ Card = React.createClass({
             <h3>{this.props.card.restaurant}</h3>
             <p>{this.props.card.price}</p>
             <span className="stars">{this.props.card.rating}</span>
-            <p>1.2 miles</p>
+            <p>{this.state.distance}</p>
           </div>
           <div className="item word-will-wrap">
             <p>{this.props.card.details}</p>

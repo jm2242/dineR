@@ -281,5 +281,10 @@ Meteor.methods({
   },
   reset: function() {
     meals.remove({affirmative: true});
+  },
+  getDistance: function(query) {
+    var result = Meteor.http.call("GET", query);
+    console.log(result.content);
+    return result.content;
   }
 })
