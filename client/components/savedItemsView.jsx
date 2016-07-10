@@ -7,7 +7,7 @@ savedItemsView = React.createClass({
   contextTypes: {router: React.PropTypes.object.isRequired},
   getMeteorData() {
     let handle = Meteor.subscribe("meals")
-    let savedMealsList = savedMeals.find().fetch()
+    let savedMealsList = [savedMeals.findOne({_id: this.props.params.mealId})];
     return {
       loading: !handle.ready(),
       savedMeals: savedMealsList
@@ -39,6 +39,9 @@ savedItemsView = React.createClass({
     if(!this.data.savedMeals.length) {
       return <div>No Saved Meals</div>
     }
-    return <div>{this.renderCards()}</div>
+    return <div>
+              {this.renderCards()}
+              <button>Test button</button>
+            </div>
   }
 })

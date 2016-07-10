@@ -17,6 +17,7 @@ Meteor.methods({
       text: text
     });
   },
+
   textRemind: function(){
     var twilio = Meteor.npmRequire('twilio');
     var client = new twilio.RestClient('ACda538d3d65a75faa96fc5752ac7a45f1', '7dad8af0e0e7e81c322234833e398af0');

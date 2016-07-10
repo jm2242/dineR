@@ -12,6 +12,9 @@ savedItems = React.createClass({
       users: data
     }
   },
+removeButtonClicked() {
+  //
+},
   reset() {
     Meteor.call('reset')
   },
@@ -21,11 +24,14 @@ savedItems = React.createClass({
     }
     let list = this.data.users.map((user) => {
       return (
-      <ReactRouter.Link className="item item-avatar" key={user._id} to={"/savedItemsView/" + user._id}>        
-        <img src={user.image}></img>
-        <h2>{user.name}</h2>
-        <p>{user.details}</p>
-      </ReactRouter.Link>
+      <div>
+        <ReactRouter.Link className="item item-avatar" key={user._id} to={"/savedItemsView/" + user._id}>        
+          <img src={user.image}></img>
+
+          <h2>{user.name}</h2>
+          <p>{user.details}</p>
+        </ReactRouter.Link>
+      </div>
       )
     })
     return (
