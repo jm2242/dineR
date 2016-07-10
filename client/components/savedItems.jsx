@@ -36,8 +36,8 @@ removeButtonClicked() {
     })
     return (
       <div className="list">
-        <div className="item item-divider">
-          <span className="database-reset-button" onClick={this.reset}>Reset</span>
+        <div className="item item-divider" align="center">
+          <h1>Saved Items</h1>
         </div>
         {list}
       </div>
