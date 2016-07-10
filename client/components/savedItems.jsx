@@ -28,8 +28,8 @@ removeButtonClicked() {
         <ReactRouter.Link className="item item-avatar" key={user._id} to={"/savedItemsView/" + user._id}>        
           <img src={user.image}></img>
 
-          <h2>{user.name}</h2>
-          <p>{user.details}</p>
+          <h2 className="word-will-wrap">{user.name}</h2>
+          <p className="word-will-wrap">{user.details}</p>
         </ReactRouter.Link>
       </div>
       )
