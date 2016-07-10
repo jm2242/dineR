@@ -1,6 +1,11 @@
 orderPlaced = React.createClass({
   render() {
-  	 let swipedMeal = meals.findOne({_id: this.props.params.mealId});
+  	Meteor.call('sendEmail',
+    	'atsy314@gmail.com',
+	    'atsy314@gmail.com',
+	    'Hello from Meteor!',
+     	'This is a test of Email.send (orderPlaced).');
+  	let swipedMeal = meals.findOne({_id: this.props.params.mealId});
     return (
     	<div className="">
     		<h3>Your Order is on the way!</h3>
