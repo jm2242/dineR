@@ -284,7 +284,6 @@ Meteor.methods({
   },
   getDistance: function(query) {
     var result = Meteor.http.call("GET", query);
-    console.log(result.content);
     return result.content;
   }
 })
