@@ -1,3 +1,7 @@
+React.initializeTouchEvents(true)
+// Add listener to get :active pseudoselector working. hack
+document.addEventListener("touchstart", function(){}, false)
+
 Card = React.createClass({
   getInitialState() {
     return {

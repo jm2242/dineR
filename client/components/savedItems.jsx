@@ -4,42 +4,37 @@ document.addEventListener("touchstart", function(){}, false)
 
 savedItems = React.createClass({
   mixins: [ReactMeteorData],
-  contextTypes: {router: React.PropTypes.object.isRequired},
-  getMeteorData() {
+  getMeteorData() {
     let handle = Meteor.subscribe("meals")
-    let savedMealsList = savedMeals.find().fetch()
+    let data = savedMeals.find().fetch()
     return {
       loading: !handle.ready(),
-      savedMeals: savedMealsList
+      users: data
     }
   },
-  removeCard(_id) {
-    meals.remove(_id)
-    //Meteor.call("repopulate")
-  },
-  orderItem(_id) {
-    meals.update({_id}, {$set: { affirmative: true}})
-    //Meteor.call("repopulate");
-    this.context.router.transitionTo('/customize' +'/' + _id);
-  },
-  renderCards() {
-    return this.data.savedMeals
-      .map((card) => {
-        return <Card
-          key={card._id}
-          card={card}
-          remove={ () => this.removeCard(card._id)}
-          orderItem={ () => this.orderItem(card._id)}
-        ></Card>
-    })
+  reset() {
+    Meteor.call('reset')
   },
   render() {
     if (this.data.loading) {
       return <h1>Loading</h1>
     }
-    if(!this.data.savedMeals.length) {
-      return <div>No Saved Meals</div>
-    }
-    return <div>{this.renderCards()}</div>
+    let list = this.data.users.map((user) => {
+      return (
+      <ReactRouter.Link className="item item-avatar" key={user._id} to={"/savedItemsView/" + user._id}>        
+        <img src={user.image}></img>
+        <h2>{user.name}</h2>
+        <p>{user.details}</p>
+      </ReactRouter.Link>
+      )
+    })
+    return (
+      <div className="list">
+        <div className="item item-divider">
+          <span className="database-reset-button" onClick={this.reset}>Reset</span>
+        </div>
+        {list}
+      </div>
+    )
   }
-})
+});
