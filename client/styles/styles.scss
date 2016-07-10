@@ -22,19 +22,20 @@
 }
 
 .container {
-	width:95%;
+	width: 95%;
+  background-color: #EBEBEB;
 }
 
 .column {
-	height:40.0%;
+	height: 40.0%;
   text-align: center;
 }
 .half-screen-left {
-  width:50.0%;
+  width: 50.0%;
   float: left;
 }
 .half-screen-right {
-  width:50.0%;
+  width: 50.0%;
   float: right;
 }
 
@@ -68,4 +69,12 @@ h2 {
 
 .nav-bar-logo {
   height: 100%;
+}
+
+.item {
+  background-color: #EBEBEB;
+}
+
+.overflow {
+  background-color: #EBEBEB;
 }

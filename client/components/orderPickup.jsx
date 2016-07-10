@@ -13,21 +13,22 @@ orderPickup = React.createClass({
     var self = this;
     var restaurantLocation = swipedMeal.location;
     navigator.geolocation.getCurrentPosition(function (currentLocation) {
-    var originStr = currentLocation.coords.latitude + ',' + currentLocation.coords.longitude;
-    var destinationStr = restaurantLocation.latitude + ',' + restaurantLocation.longitude;
-    var query = 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=' + originStr + '&destinations=' + destinationStr;
+	    var originStr = currentLocation.coords.latitude + ',' + currentLocation.coords.longitude;
+	    var destinationStr = restaurantLocation.latitude + ',' + restaurantLocation.longitude;
+	    var query = 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=' + originStr + '&destinations=' + destinationStr;
 
-    Meteor.call('getDistance', query, function(error, result) {
-        if(error) {
-          self.setState({
-            distance: 'Can\'t get distance'
-          })
-        }
-        var jsonResult = JSON.parse(result)
-        self.setState({
-          time: parseInt(jsonResult.rows[0].elements[0].duration.text) * 60000
-        })
-      });
+	    Meteor.call('getDistance', query, function successCallback(error, result) {
+	    	debugger;
+	        if(error) {          
+	            $('.timer').hide()
+	        }
+	        var jsonResult = JSON.parse(result)
+	        self.setState({
+	          time: parseInt(jsonResult.rows[0].elements[0].duration.text) * 60000
+	        })
+	      });
+    }, function errorCallback() {
+		$('.timer').hide()
     })
   },
   render() {
@@ -66,7 +67,7 @@ orderPickup = React.createClass({
     return (
     	<div className="">
     		<h3>Your Order has been placed!</h3>
-    		<h5>It will be ready in <span><CountdownTimer initialTimeRemaining={this.state.time} /></span> minutes!</h5>
+    		<CountdownTimer initialTimeRemaining={this.state.time} />
     		<div className="card container">
 	          <div className="item item-body column">
 	            <img className="full-image column" src={swipedMeal.image} />
