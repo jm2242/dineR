@@ -1,4 +1,10 @@
 Settings = React.createClass({
+  this.state = {
+    filterOptions: "allItems"
+  },
+  handleChange: function(event) {
+    this.setState({filterOptions: event.target.value})
+  },
   componentDidMount: function () {
     $(document).ready( function() {
       settingsFilter = $("[name='Filter Option']:checked").val();

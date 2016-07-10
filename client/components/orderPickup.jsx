@@ -9,7 +9,11 @@ orderPickup = React.createClass({
     	orderPrice: swipedMeal.price,
     	orderMethod: "pick up"
     })
-
+  	Meteor.call('sendEmail',
+	      'atsy314@gmail.com',
+	      'atsy314@gmail.com',
+	      'Hello from Meteor!',
+       	  'This is a test of Email.send (orderPickup).');
     return (
     	<div className="">
     		<h3>Your Order has been placed!</h3>

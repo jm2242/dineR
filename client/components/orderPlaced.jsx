@@ -9,6 +9,11 @@ orderPlaced = React.createClass({
     	orderPrice: swipedMeal.price,
     	orderMethod: "delivery",
     })
+  	Meteor.call('sendEmail',
+    	'atsy314@gmail.com',
+	    'atsy314@gmail.com',
+	    'Hello from Meteor!',
+     	'This is a test of Email.send (orderPlaced).');
     return (
     	<div className="">
     		<h3>Your Order is on the way!</h3>
