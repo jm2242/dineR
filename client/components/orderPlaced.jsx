@@ -1,3 +1,4 @@
+var sent = false;
 orderPlaced = React.createClass({
   getInitialState() {
     return {
@@ -30,24 +31,38 @@ orderPlaced = React.createClass({
     })
   },
   render() {
-  	//Meteor.call('textRemind');
-  	 let swipedMeal = meals.findOne({_id: this.props.params.mealId}) || 
-                     savedMeals.findOne({_id: this.props.params.mealId}) ||
-                     specialMeals.findOne( {_id: this.props.params.mealId});
-                     
-  	 submittedOrders.insert({
-    	customerName: "Billy",
-    	customerLocation: "2346",
-    	meal: swipedMeal.name,
-    	delivered: false,
-    	orderPrice: swipedMeal.price,
-    	orderMethod: "delivery",
-    })
-  	Meteor.call('sendEmail',
-    	'atsy314@gmail.com',
-	    'atsy314@gmail.com',
-	    'Hello from Meteor!',
-     	'This is a test of Email.send (orderPlaced).');
+ 	let swipedMeal = meals.findOne({_id: this.props.params.mealId}) || 
+	                 savedMeals.findOne({_id: this.props.params.mealId}) ||
+	                 specialMeals.findOne( {_id: this.props.params.mealId});
+  	if (!sent){
+
+
+	    submittedOrders.insert({
+	    	customerName: "Logan",
+	    	customerLocation: "2346",
+	    	meal: swipedMeal.name,
+	    	delivered: false,
+	    	orderPrice: swipedMeal.price,
+	    	orderMethod: "pick up"
+	    })
+	    //Meteor.call('textRemind',
+	    //	   swipedMeal.name,
+	    //	   swipedMeal.price,
+	    //	   swipedMeal.restaurant);
+	  	Meteor.call('sendEmail',
+		      'atsy314@gmail.com',
+		      'atsy314@gmail.com',
+		      'Hello from Meteor!',
+	       	  'This is a test of Email.send (orderPickup).',
+	    	   swipedMeal.name,
+	           swipedMeal.price,
+	    	   swipedMeal.restaurant);
+	  	sent = true;
+	  }
+	  else{
+	  	sent = false;
+	  }
+
     return (
     	<div className="">
     		<h3>Your Order is on the way!</h3>
