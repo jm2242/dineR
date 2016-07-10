@@ -105,7 +105,6 @@ Card = React.createClass({
         y: 0,
         dragging: "all 0.5s ease"
       })
-      savedMeals.insert(this.props.card)
       Meteor.setTimeout(this.props.remove, 500)
     } else if (e.changedTouches[0].pageX > (window.innerWidth - 50)) {
       this.setState({
