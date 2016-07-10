@@ -17,7 +17,8 @@ Customize = React.createClass({
       return <h1> Error</h1>
     }
     let swipedMeal = meals.findOne({_id: this.props.params.mealId}) || 
-                     savedMeals.findOne({_id: this.props.params.mealId});
+                     savedMeals.findOne({_id: this.props.params.mealId}) ||
+                     specialMeals.findOne( {_id: this.props.params.mealId});
 
     var options = [];
     var c = 0;

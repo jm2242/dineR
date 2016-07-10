@@ -1,7 +1,4 @@
 Settings = React.createClass({
-  this.state = {
-    filterOptions: "allItems"
-  },
   handleChange: function(event) {
     this.setState({filterOptions: event.target.value})
   },
@@ -16,15 +13,9 @@ Settings = React.createClass({
         <div className="item item-divider">
           <h3>Choose your search filter</h3>
         </div>
-
-         <p><input type="radio" id="filter" name="Filter Option" value="allItems" defaultChecked>All Items</input></p>
-         <p><input type="radio" id="filter" name="Filter Option" value="savedtems">Saved Items</input></p>
-         <p><input type="radio" id="filter" name="Filter Option" value="restaurantSpecials">Restaurant Specials</input></p>
-        <div className="bar bar-footer bar-assertive">
-          <ReactRouter.Link className="button button-bar" to={"/home" + '/' + document.getElementById('filter')}>APPLY FILTER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
-            <span className = "icon ion-arrow-right-a"></span>
-          </ReactRouter.Link>
-        </div>
+          <ReactRouter.Link className="button button-bar" to={"/home/allItemsFilter"}>All Items</ReactRouter.Link>
+          <ReactRouter.Link className="button button-bar" to={"/home/savedItemsFilter"}>Saved Items</ReactRouter.Link>
+          <ReactRouter.Link className="button button-bar" to={"/home/restaurantSpecialsFilter"}>Restaurant Specials</ReactRouter.Link> 
       </div>
   }
 });

@@ -247,7 +247,7 @@ populate = function() {
     location: {"latitude": 42.378282, "longitude": -71.0364},
     mealOptions: {"Pefect As Is Or GTFO": true}
    })
-    meals.insert({
+    specialMeals.insert({
     name: "Metal Ice Cream for Rich People",
     restaurant: "Kanye's Dairy Farm",
     image: "http://i.dailymail.co.uk/i/pix/2012/05/10/article-2142399-1304C591000005DC-401_468x577.jpg",
