@@ -1,0 +1,9 @@
+{
+  "galaxy.meteor.com": {
+    "env": {
+      "ROOT_URL": "http://dineR.meteorapp.com/",
+      "MONGO_URL": "mongodb://dinerAdmin:dinerAdmin@ds051740.mlab.com:51740/diner_mongodb"
+    }
+
+  }
+}

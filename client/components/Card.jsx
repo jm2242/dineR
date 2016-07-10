@@ -29,26 +29,27 @@ Card = React.createClass({
     $(function() {
       $('span.stars').stars();
     });
+    if (this.props.card.location) {
+      var restaurantLocation = this.props.card.location;
+      var self = this;
+      navigator.geolocation.getCurrentPosition(function (currentLocation) {
+      var originStr = currentLocation.coords.latitude + ',' + currentLocation.coords.longitude;
+      var destinationStr = restaurantLocation.latitude + ',' + restaurantLocation.longitude;
+      var query = 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=' + originStr + '&destinations=' + destinationStr;
 
-    var restaurantLocation = this.props.card.location;
-    var self = this;
-    navigator.geolocation.getCurrentPosition(function (currentLocation) {
-    var originStr = currentLocation.coords.latitude + ',' + currentLocation.coords.longitude;
-    var destinationStr = restaurantLocation.latitude + ',' + restaurantLocation.longitude;
-    var query = 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=' + originStr + '&destinations=' + destinationStr;
-
-    Meteor.call('getDistance', query, function(error, result) {
-        if(error) {
+      Meteor.call('getDistance', query, function(error, result) {
+          if(error) {
+            self.setState({
+              distance: 'Can\'t get distance'
+            })
+          }
+          var jsonResult = JSON.parse(result)
           self.setState({
-            distance: 'Can\'t get distance'
+            distance: jsonResult.rows[0].elements[0].distance.text
           })
-        }
-        var jsonResult = JSON.parse(result)
-        self.setState({
-          distance: jsonResult.rows[0].elements[0].distance.text
-        })
-      });
-    })
+        });
+      })
+    }
   },
   clickSavedMeal(e) {
     e.preventDefault()
@@ -152,7 +153,7 @@ Card = React.createClass({
       <div className="">
         <div className="card container" onTouchStart={this.moveCardInit} onTouchMove={this.moveCard} onTouchEnd={this.moveCardEnd} style={cardStyle}>
           <div className="item item-body column">
-            <img className="full-image column" src={this.props.card.image} />
+            <img className="card-image" src={this.props.card.image} />
           </div>
           <div className="item">
             <h2>{this.props.card.name}</h2>
