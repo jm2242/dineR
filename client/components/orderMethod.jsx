@@ -15,8 +15,8 @@ orderMethod = React.createClass({
 	  return (
 	  	<div>
 		  	<div className= "buttons">
-				<ReactRouter.Link className="button button-block button-assertive" to={"/orderPlaced"}>Delivery</ReactRouter.Link>
-				<ReactRouter.Link className="button button-block button-calm" to={"/orderPickup"}>Pick Up</ReactRouter.Link>
+				<ReactRouter.Link className="button button-block button-assertive" to={"/orderPlaced/" + this.props.params.mealId}>Delivery</ReactRouter.Link>
+				<ReactRouter.Link className="button button-block button-calm" to={"/orderPickup/" + this.props.params.mealId}>Pick Up</ReactRouter.Link>
 			</div>
 		</div>
 	  	)
