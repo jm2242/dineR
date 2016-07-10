@@ -161,8 +161,8 @@ Card = React.createClass({
             <span className="stars">{this.props.card.rating}</span>
             <p>{this.state.distance}</p>
           </div>
-          <div className="item word-will-wrap">
-            <p>{this.props.card.details}</p>
+          <div className="item">
+            <p className="word-will-wrap">{this.props.card.details}</p>
           </div>
         </div>
       </div>

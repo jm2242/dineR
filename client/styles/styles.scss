@@ -39,7 +39,7 @@
 }
 
 .word-will-wrap {
-	word-wrap: break-word;
+	white-space: normal !important;
 }
 
 span.stars, span.stars span {
@@ -56,4 +56,12 @@ span.stars span {
 .card-image {
   height: 300px;
   width: 100%;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
 }
