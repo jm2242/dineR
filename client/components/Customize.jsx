@@ -33,7 +33,7 @@ Customize = React.createClass({
         <h2>{swipedMeal['name']}</h2>
         <div dangerouslySetInnerHTML={{__html: options}} />    
         <div className="bar bar-footer bar-assertive">
-          <ReactRouter.Link className="button button-bar" to={"/"}>Order  
+          <ReactRouter.Link className="button button-bar" to={"/orderMethod/" + this.props.params.mealId}>Order  
             <span className = "icon ion-arrow-right-a"></span>
           </ReactRouter.Link>
         </div>
