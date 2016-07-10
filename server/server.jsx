@@ -5,27 +5,26 @@ Meteor.startup(function () {
   process.env.MAIL_URL = 'smtp://postmaster@sandbox624ad9a11d5647ee82c00c84ff7b2ddf.mailgun.org:31984d87e9a154aff51093b79c45507e@smtp.mailgun.org:587';
 })
 Meteor.methods({
-  sendEmail: function (to, from, subject, text) {
-    check([to, from, subject, text], [String]);
+  sendEmail: function (to, from, subject, text, name, price, restaurant) {
+    check([to, from, subject, text, name, restaurant, price], [String]);
 
     this.unblock();
 
     Email.send({
       to: to,
       from: from,
-      subject: subject,
-      text: text
+      subject: 'Your dineR Order',
+      text: name + ' has been purchased from ' + restaurant + ' for ' + price
     });
   },
-
-  textRemind: function(){
+  textRemind: function(name, price, restaurant){
     var twilio = Meteor.npmRequire('twilio');
     var client = new twilio.RestClient('ACda538d3d65a75faa96fc5752ac7a45f1', '7dad8af0e0e7e81c322234833e398af0');
     client.sendMessage({
 
         to:'+19085009502', // Any number Twilio can deliver to
         from: '+19086529282', // A number you bought from Twilio and can use for outbound communication
-        body: 'Test' // body of the SMS message
+        body: name + ' has been purchased from ' + restaurant + ' for ' + price// body of the SMS message
 
     }, function(err, responseData) { //this function is executed when a response is received from Twilio
 
