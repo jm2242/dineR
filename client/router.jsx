@@ -8,6 +8,7 @@ const routes = (
     <ReactRouter.Route name="orderMethod" path="/orderMethod/:mealId" handler={orderMethod} />
     <ReactRouter.Route name="orderPlaced" path="/orderPlaced/:mealId" handler={orderPlaced} />
     <ReactRouter.Route name="orderPickup" path="/orderPickup/:mealId" handler={orderPickup} />
+    <ReactRouter.Redirect from='/' to='/home' />  
     <ReactRouter.DefaultRoute handler={AppLoading} />
     <ReactRouter.NotFoundRoute handler={AppNotFound} />
   </ReactRouter.Route>
