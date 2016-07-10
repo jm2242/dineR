@@ -21,6 +21,16 @@ savedItemsView = React.createClass({
     //Meteor.call("repopulate");
     this.context.router.transitionTo('/customize' +'/' + _id);
   },
+  xButtonClicked(e) {
+    e.preventDefault()
+    this.setState({
+        x: -1000,
+        y: 0,
+        dragging: "all 0.5s ease"
+      })
+    Meteor.setTimeout(savedMeals.remove(this.data.savedMeals[0]._id), 500)
+    this.context.router.transitionTo('/savedItems')
+  },
   renderCards() {
     return this.data.savedMeals
       .map((card) => {
@@ -41,7 +51,9 @@ savedItemsView = React.createClass({
     }
     return <div>
               {this.renderCards()}
-              <button>Test button</button>
+              <MyButton clickHandler={this.xButtonClicked} buttonClass="button button-block button-assertive icon ion-close-round"> 
+                Test button
+              </MyButton>   
             </div>
   }
 })
