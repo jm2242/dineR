@@ -119,7 +119,8 @@ CountdownTimer = React.createClass({
     minutes = minutes < 10 ? '0' + minutes : minutes;
     hours = hours < 10 ? '0' + hours : hours;
 
-    return hours + ':' + minutes + ':' + seconds;
+    //return hours + ':' + minutes + ':' + seconds;
+    return minutes + ':' + seconds;
   },
 
   render: function() {
