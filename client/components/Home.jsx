@@ -84,7 +84,7 @@ Home = React.createClass({
   },
   render() {
     if (this.data.loading) {
-      return <h1>Loading</h1>  
+      return <Apploading></Apploading>
     }
     return <div>
             {this.renderCards()}
