@@ -21,8 +21,8 @@ Home = React.createClass({
     }
   },
   removeCard(_id) {
-  if (this.props.params.filterOption === "SavedItemsFilter") {
-
+  if (this.props.params.filterOption === "savedItemsFilter") {
+    savedMeals.remove(_id)
   } else {
     meals.remove(_id)
   }

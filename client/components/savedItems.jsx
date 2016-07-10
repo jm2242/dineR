@@ -22,6 +22,9 @@ removeButtonClicked() {
     if (this.data.loading) {
       return <h1>Loading</h1>
     }
+    if (this.data.users[0] == undefined) {
+      return ( <h1> No saved items </h1> )
+    }
     let list = this.data.users.map((user) => {
       return (
       <div>

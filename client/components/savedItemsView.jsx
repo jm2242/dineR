@@ -51,8 +51,7 @@ savedItemsView = React.createClass({
     }
     return <div>
               {this.renderCards()}
-              <MyButton clickHandler={this.xButtonClicked} buttonClass="button button-block button-assertive icon ion-close-round"> 
-                Test button
+              <MyButton clickHandler={this.xButtonClicked} buttonClass="button button-block button-assertive" buttonText="REMOVE ITEM"> 
               </MyButton>   
             </div>
   }
