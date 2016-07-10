@@ -1,6 +1,6 @@
 ---Contributors on dineR---
 
-Software Developers/Pokemon Go Trainers:
+Senior Software Developers/Pokemon Go Trainers:
 Logan Nathanson
 Ash Kumar
 
@@ -10,10 +10,10 @@ Jonathan Mares
 Business Persons/Business Persons:
 Nick Dunlap
 
-Expert Sleeper/Vim Expert:
+GOAT Sleeper/Vim Expert:
 Savage Sy
 
-Junior Developer/Pokemon Go Trainee:
+Pokemon Go Trainee:
 Kevin McKeever
 
 ---Contributors on dineR---

@@ -1,5 +1,5 @@
 AppLoading = React.createClass({
   render() {
-    return <h1>Loading…</h1>
+    return <h1 className="ion-load-a title"></h1>
   }
 });
