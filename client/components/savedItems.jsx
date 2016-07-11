@@ -23,7 +23,7 @@ removeButtonClicked() {
       return <h1>Loading</h1>
     }
     if (this.data.users[0] == undefined) {
-        return (<div className="card">
+        return (<div className="card2">
                     <div className="item item-divider no-items-title">
                         There Are No Saved Items
                     </div>
