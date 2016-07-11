@@ -44,8 +44,8 @@ orderPlaced = React.createClass({
 		   swipedMeal.price,
 		   swipedMeal.restaurant);
 	Meteor.call('sendEmail',
-		  'atsy314@gmail.com',
-		  'atsy314@gmail.com',
+            'jmares93@gmail.com',
+            'order@diner.com',
 		  'Hello from Meteor!',
 		  'This is a test of Email.send (orderPickup).',
 		   swipedMeal.name,
