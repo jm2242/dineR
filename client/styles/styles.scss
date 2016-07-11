@@ -17,8 +17,8 @@
 }
 
 .float-bottom {
-	position: absolute;
-	bottom: 0;
+	position: fixed;
+	bottom: -1em;
 }
 
 .container {
