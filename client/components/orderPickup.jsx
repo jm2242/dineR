@@ -30,19 +30,13 @@ orderPickup = React.createClass({
     }, function errorCallback() {
 		$('.timer').hide()
     })
-  },
-  render() {
- 	let swipedMeal = meals.findOne({_id: this.props.params.mealId}) || 
-	                 savedMeals.findOne({_id: this.props.params.mealId}) ||
-	                 specialMeals.findOne( {_id: this.props.params.mealId});
-
-	submittedOrders.insert({
+    submittedOrders.insert({
 		customerName: "Logan",
 		customerLocation: "2346",
 		meal: swipedMeal.name,
 		delivered: false,
 		orderPrice: swipedMeal.price,
-		orderMethod: "pick up",
+		orderMethod: "Pick Up",
 		dateOrdered: moment().calendar()
 	})
 	Meteor.call('textRemind',
@@ -57,6 +51,11 @@ orderPickup = React.createClass({
 		   swipedMeal.name,
 		   swipedMeal.price,
 		   swipedMeal.restaurant);
+  },
+  render() {
+ 	let swipedMeal = meals.findOne({_id: this.props.params.mealId}) || 
+	                 savedMeals.findOne({_id: this.props.params.mealId}) ||
+	                 specialMeals.findOne( {_id: this.props.params.mealId});
 
     return (
     	<div className="">

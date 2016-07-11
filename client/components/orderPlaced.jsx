@@ -29,13 +29,7 @@ orderPlaced = React.createClass({
     }, function errorCallback(error) {
       $('.timer').hide()
     });
-  },
-  render() {
- 	let swipedMeal = meals.findOne({_id: this.props.params.mealId}) || 
-	                 savedMeals.findOne({_id: this.props.params.mealId}) ||
-	                 specialMeals.findOne( {_id: this.props.params.mealId});
-
-	submittedOrders.insert({
+    submittedOrders.insert({
 		customerName: "Logan",
 		customerLocation: "2346",
 		meal: swipedMeal.name,
@@ -57,6 +51,12 @@ orderPlaced = React.createClass({
 		   swipedMeal.name,
 		   swipedMeal.price,
 		   swipedMeal.restaurant);
+  },
+  render() {
+ 	let swipedMeal = meals.findOne({_id: this.props.params.mealId}) || 
+	                 savedMeals.findOne({_id: this.props.params.mealId}) ||
+	                 specialMeals.findOne( {_id: this.props.params.mealId});
+
 
     return (
     	<div className="">
