@@ -150,7 +150,7 @@ Card = React.createClass({
     }
     return (
       <div className="">
-        <div className="card container" onTouchStart={this.moveCardInit} onTouchMove={this.moveCard} onTouchEnd={this.moveCardEnd} style={cardStyle}>
+        <div className="card container card-style" onTouchStart={this.moveCardInit} onTouchMove={this.moveCard} onTouchEnd={this.moveCardEnd} style={cardStyle}>
           <div className="item item-body column">
             <img className="card-image" src={this.props.card.image} />
           </div>
