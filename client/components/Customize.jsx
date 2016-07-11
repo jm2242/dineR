@@ -50,7 +50,7 @@ Customize = React.createClass({
 		                </div>
                 	</div>
                 	<ReactRouter.Link className="button bar-footer float-bottom-2 button-block button-assertive" to={"/orderMethod/" + this.props.params.mealId}>Order Now</ReactRouter.Link>
-                </div> 
+                </div>
             )
         }
         return (
