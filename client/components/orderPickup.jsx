@@ -44,7 +44,7 @@ orderPickup = React.createClass({
 	    	delivered: false,
 	    	orderPrice: swipedMeal.price,
 	    	orderMethod: "pick up",
-			dateOrdered: moment().calendar(),
+			dateOrdered: moment().calendar()
 	    })
 	    //Meteor.call('textRemind',
 	    //	   swipedMeal.name,

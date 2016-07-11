@@ -43,7 +43,7 @@ orderPlaced = React.createClass({
 	    	delivered: false,
 	    	orderPrice: swipedMeal.price,
 	    	orderMethod: "Delivery",
-			dateOrdered: Date(),
+			dateOrdered: moment().calendar()
 	    })
 	    //Meteor.call('textRemind',
 	    //	   swipedMeal.name,
