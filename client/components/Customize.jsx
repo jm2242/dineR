@@ -24,11 +24,12 @@ Customize = React.createClass({
         var c = 0;
         var Available = false
         for (var option in swipedMeal['mealOptions']) {
+            debugger;
             options.push(
                 '<li class="item item-checkbox">'
                 +option
                 +'<label class="checkbox">' +
-                '<input type="checkbox" checked="'+getCheckedValue(swipedMeal['mealOptions'][option])+'">' +
+                '<input type="checkbox" '+getCheckedValue(swipedMeal['mealOptions'][option])+'>' +
                 '</label>' +
                 '</li>')
            	Available = true
@@ -74,7 +75,7 @@ Customize = React.createClass({
 
 function getCheckedValue(isChecked) {
     if (isChecked){
-        return "checked";
+        return 'checked="checked"';
     }
     else {
         return "";
