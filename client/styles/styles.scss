@@ -3,6 +3,9 @@
 
 .card {
   cursor: pointer;
+  width: 100%;
+  overflow: hidden;
+  height: 75vh;
 }
 
 .database-reset-button {
@@ -55,7 +58,6 @@ span.stars span {
 }
 
 .card-image {
-  height: 300px;
   width: 100%;
 }
 
