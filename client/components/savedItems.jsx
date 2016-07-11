@@ -28,7 +28,7 @@ removeButtonClicked() {
                         There Are No Saved Items
                     </div>
                         <div className="item item-text-wrap no-items-text">
-                            Save items to fill the list by swiping items up or pressing the heart icon.
+                            Save items to fill the list by swiping items up or pressing the star icon.
                         </div>
                   </div> 
                 )
