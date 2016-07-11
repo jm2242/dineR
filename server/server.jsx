@@ -22,8 +22,8 @@ Meteor.methods({
     var client = new twilio.RestClient('ACda538d3d65a75faa96fc5752ac7a45f1', '7dad8af0e0e7e81c322234833e398af0');
     client.sendMessage({
 
-        to:'+19085009502', // Any number Twilio can deliver to
-        from: '+19086529282', // A number you bought from Twilio and can use for outbound communication
+        to:'+19144501257', // Any number Twilio can deliver to
+        from: '+19144501257', // A number you bought from Twilio and can use for outbound communication
         body: name + ' has been purchased from ' + restaurant + ' for ' + price// body of the SMS message
 
     }, function(err, responseData) { //this function is executed when a response is received from Twilio
@@ -47,7 +47,7 @@ populate = function() {
   meals.insert({
     name: "Pepperoni Pizza",
     restaurant: "Pizza Place",
-    image: "http://images.bigoven.com/image/upload/v1457113782/awesome-pepperoni-pizza-7f8696.jpg",
+    image: "https://images.bigoven.com/image/upload/v1457113782/awesome-pepperoni-pizza-7f8696.jpg",
     details: "Some dank pizza with pepperoni",
     price: "$10.99",
     rating: 3.6,
@@ -57,7 +57,7 @@ populate = function() {
   meals.insert({
     name: "California Roll",
     restaurant: "Miyagi Mansion",
-    image: "http://www.mnpr.biz/wp-content/uploads/2012/12/California-Roll-1.jpg",
+    image: "https://www.mnpr.biz/wp-content/uploads/2012/12/California-Roll-1.jpg",
     details: "Sushi made only with the dankest of fake crab",
     price: "$8.99",
     rating: 4.5,
@@ -67,7 +67,7 @@ populate = function() {
   meals.insert({
     name: "Chinese Fried Rice",
     restaurant: "Asian Place",
-    image: "http://beautifycorner.com/wp-content/uploads/2015/02/chinese_fried_rice-1024x683.jpg",
+    image: "https://beautifycorner.com/wp-content/uploads/2015/02/chinese_fried_rice-1024x683.jpg",
     details: "Dank rice, dank peas and normal carrots ",
     price: "$5.99",
     rating: 3.1,
@@ -77,7 +77,7 @@ populate = function() {
   meals.insert({
     name: "Beef Burrito",
     restaurant: "Picante Queso",
-    image: "http://www.tacobueno.com/media/1381/beefbob.png?quality=65",
+    image: "https://www.tacobueno.com/media/1381/beefbob.png?quality=65",
     details: "A dank Burrito from the dankest kitchen",
     price: "$7.99",
     rating: 4.5,
@@ -87,7 +87,7 @@ populate = function() {
   meals.insert({
     name: "Vanilla Ice Cream",
     restaurant: "Creamy Treats",
-    image: "http://foodnetwork.sndimg.com/content/dam/images/food/fullset/2012/4/5/2/FNM_050112-Ted-Farmers-Market-001_s4x3.jpg.rend.sniipadlarge.jpeg",
+    image: "https://foodnetwork.sndimg.com/content/dam/images/food/fullset/2012/4/5/2/FNM_050112-Ted-Farmers-Market-001_s4x3.jpg.rend.sniipadlarge.jpeg",
     details: "Dank cream with dank flavor",
     price: "$4.99",
     rating: 4.7,
@@ -97,7 +97,7 @@ populate = function() {
   meals.insert({
     name: "Lemon-Pepper Salmon",
     restaurant: "Salmon Sanctuary",
-    image: "http://recipegreat.com/images/lemon-pepper-salmon-04.jpg",
+    image: "https://recipegreat.com/images/lemon-pepper-salmon-04.jpg",
     details: "Salmon that climbed the waterfall to dankhood",
     price: "$13.99",
     rating: 4.3,
@@ -107,7 +107,7 @@ populate = function() {
   meals.insert({
     name: "Nachos Supreme",
     restaurant: "Mexican Magic",
-    image: "http://uvmbored.com/wp-content/uploads/2016/02/Urban_Nachos1.jpg",
+    image: "https://uvmbored.com/wp-content/uploads/2016/02/Urban_Nachos1.jpg",
     details: "Delicious nachos filled with various toppings. Dank.",
     price: "$6.99",
     rating: 3.9,
@@ -117,7 +117,7 @@ populate = function() {
   meals.insert({
     name: "Tiramisu",
     restaurant: "Competent Confections",
-    image: "http://foodnetwork.sndimg.com/content/dam/images/food/fullset/2011/2/4/2/RX-FNM_030111-Sugar-Fix-005_s4x3.jpg.rend.sni12col.landscape.jpeg",
+    image: "https://foodnetwork.sndimg.com/content/dam/images/food/fullset/2011/2/4/2/RX-FNM_030111-Sugar-Fix-005_s4x3.jpg.rend.sni12col.landscape.jpeg",
     details: "A creamy and dank cake",
     price: "$19.99",
     rating: 4.7,
@@ -127,7 +127,7 @@ populate = function() {
   meals.insert({
     name: "Udon Soup",
     restaurant: "City Wok",
-    image: "http://atmedia.imgix.net/ca703b173c62c00aaf94aeefa4eb4715203a4597?w=800.0&fit=max",
+    image: "https://atmedia.imgix.net/ca703b173c62c00aaf94aeefa4eb4715203a4597?w=800.0&fit=max",
     details: "A dank soup with the dankest noodles",
     price: "$8.99",
     rating: 4.0,
@@ -137,7 +137,7 @@ populate = function() {
   meals.insert({
     name: "Ham and Cheese Omlet",
     restaurant: "No Finer Diner",
-    image: "http://www.incredibleegg.org/wp-content/uploads/ham_cheese_omelette_930x5502-930x550.jpg",
+    image: "https://www.incredibleegg.org/wp-content/uploads/ham_cheese_omelette_930x5502-930x550.jpg",
     details: "Some dank eggs and ham plus cheese",
     price: "$7.99",
     location: {"latitude": 42.33597, "longitude": -71.2417},
@@ -155,7 +155,7 @@ populate = function() {
   meals.insert({
     name: "White Chocolate Macadamia Nut Cookies",
     restaurant: "Sweet Treats",
-    image: "http://canadianhometrends.com/wp-content/uploads/2014/04/white-choco-maca1.jpg",
+    image: "https://canadianhometrends.com/wp-content/uploads/2014/04/white-choco-maca1.jpg",
     details: "Cookies for the dankest of children",
     price: "$5.99",
     location: {"latitude": 42.34097, "longitude": -71.067177},
@@ -164,7 +164,7 @@ populate = function() {
  meals.insert({
     name: "Pad See Ew",
     restaurant: "City Wok",
-    image: "http://cdn2.recipetineats.com/wp-content/uploads/2014/06/Pad-See-Ew-Thai-Noodles_2-1.jpg",
+    image: "https://cdn2.recipetineats.com/wp-content/uploads/2014/06/Pad-See-Ew-Thai-Noodles_2-1.jpg",
     details: "A dank Pad See Ew",
     price: "$12.99",
     rating: 4.2,
@@ -174,7 +174,7 @@ populate = function() {
   meals.insert({
     name: "Bacon", 
     restaurant: "Au Cheval",
-    image: "http://auchevalchicago.com/wp-content/uploads/IMG_4780-2.jpg",
+    image: "https://auchevalchicago.com/wp-content/uploads/IMG_4780-2.jpg",
     details: "Bacon...Dank",
     price: "$4.99",
     rating: 5.0,
@@ -184,12 +184,12 @@ populate = function() {
   meals.insert({
     name: "Bacon Cheeseburger",
     restaurant: "Au Cheval",
-    image: "http://auchevalchicago.com/wp-content/uploads/new-burger.jpg",
+    image: "https://auchevalchicago.com/wp-content/uploads/new-burger.jpg",
     details: "A Bacon Cheeseburger with a Dank Egg",
     price: "$10.99",
     rating: 4.8,
     location: {"latitude": 42.40617, "longitude": -71.2367},
-    mealOptions: {"Garlic Aioli": true, "Fried Egg": true, "Onion": true, "turkey burger": false }
+    mealOptions: {"Garlic Aioli": true, "Fried Egg": true, "Onion": true, "Turkey Burger": false }
   })
   meals.insert({
     name: "Orange and Fennel-Roasted Chicken",
@@ -204,7 +204,7 @@ populate = function() {
   meals.insert({
     name: "Brownie Pie",
     restaurant: "Sweet Sweet Sweet",
-    image: "http://s3.favim.com/orig/40/brownie-cake-chocolate-delicious-food-Favim.com-335002.jpg",
+    image: "https://s3.favim.com/orig/40/brownie-cake-chocolate-delicious-food-Favim.com-335002.jpg",
     details: "Sweet Sweet Dank",
     price: "$6.99",
     rating: 4.1,
@@ -214,7 +214,7 @@ populate = function() {
     meals.insert({
     name: "Barbeque Sauce Glazed Steak Tip",
     restaurant: "Meet my Meat",
-    image: "http://www.freshmeatdirect.co.uk/ekmps/shops/stdnmeats/images/9-x-peppered-bbq-minute-steaks-special-offer--57-p.jpg",
+    image: "https://www.freshmeatdirect.co.uk/ekmps/shops/stdnmeats/images/9-x-peppered-bbq-minute-steaks-special-offer--57-p.jpg",
     details: "Dank Glaze for a Dank Steak",
     price: "$17.99",
     rating: 4.4,
@@ -224,7 +224,7 @@ populate = function() {
     meals.insert({
     name: "Grilled Pork Steaks",
     restaurant: "Porkys",
-    image: "http://www.extraordinarybbq.com/wp-content/uploads/2012/05/DSC_0101.jpg",
+    image: "https://www.extraordinarybbq.com/wp-content/uploads/2012/05/DSC_0101.jpg",
     details: "We Double Dare you to find Danker Pork",
     price: "$13.99",
     rating: 4.2,
@@ -234,7 +234,7 @@ populate = function() {
     meals.insert({
     name: "Spaghetti alla Carbonara",
     restaurant: "Sweet Sweet Sweet",
-    image: "http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2012/5/9/1336579239372/Felicitys-perfect-spaghet-008.jpg",
+    image: "https://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2012/5/9/1336579239372/Felicitys-perfect-spaghet-008.jpg",
     details: "Dank from Under the Tuscan Sun",
     price: "$11.99",
     rating: 4.9,
@@ -244,7 +244,7 @@ populate = function() {
     meals.insert({
     name: "Eggplant Parmesan",
     restaurant: "We Ran Out Of Chicken",
-    image: "http://www.cook-italian.com/.a/6a010535d7df4f970b0120a870799c970b-500pi",
+    image: "https://www.cook-italian.com/.a/6a010535d7df4f970b0120a870799c970b-500pi",
     details: "Eggplant, Never Been a Danker Vegetable",
     price: "$8.99",
     rating: 3.9,
@@ -264,7 +264,7 @@ populate = function() {
     meals.insert({
     name: "Mutha Fuckin Crunchwrap Supreme",
     restaurant: "T-Bell",
-    image: "http://media2.popsugar-assets.com/files/2015/03/25/038/n/1922195/7c49bba7_edit_img_image_1090627_1427242408_Crunchwrap_Supreme_SQUARE/i/Taco-Bell-Crunchwrap-Supreme-Recipe.jpg",
+    image: "https://media2.popsugar-assets.com/files/2015/03/25/038/n/1922195/7c49bba7_edit_img_image_1090627_1427242408_Crunchwrap_Supreme_SQUARE/i/Taco-Bell-Crunchwrap-Supreme-Recipe.jpg",
     details: "A Dank-Ass Crunchwrap Supreme, Nuff Said",
     price: "$3.99",
     rating: 5.1,
@@ -274,7 +274,7 @@ populate = function() {
     specialMeals.insert({
     name: "Metal Ice Cream for Rich People",
     restaurant: "Kanye's Dairy Farm",
-    image: "http://i.dailymail.co.uk/i/pix/2012/05/10/article-2142399-1304C591000005DC-401_468x577.jpg",
+    image: "https://i.dailymail.co.uk/i/pix/2012/05/10/article-2142399-1304C591000005DC-401_468x577.jpg",
     details: "Gold on My Chain, Gold on My Watch, Dank on my Ice Cream",
     price: "$1000.00",
     rating: 4.3,
