@@ -36,15 +36,14 @@ orderPlaced = React.createClass({
 	                 savedMeals.findOne({_id: this.props.params.mealId}) ||
 	                 specialMeals.findOne( {_id: this.props.params.mealId});
   	if (!sent){
-
-
 	    submittedOrders.insert({
 	    	customerName: "Logan",
 	    	customerLocation: "2346",
 	    	meal: swipedMeal.name,
 	    	delivered: false,
 	    	orderPrice: swipedMeal.price,
-	    	orderMethod: "pick up"
+	    	orderMethod: "Delivery",
+			dateOrdered: Date(),
 	    })
 	    //Meteor.call('textRemind',
 	    //	   swipedMeal.name,
