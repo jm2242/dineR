@@ -24,7 +24,6 @@ Customize = React.createClass({
         var c = 0;
         var Available = false
         for (var option in swipedMeal['mealOptions']) {
-            debugger;
             options.push(
                 '<li class="item item-checkbox">'
                 +option
