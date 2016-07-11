@@ -25,6 +25,8 @@ orderPickup = React.createClass({
 	        self.setState({
 	          time: parseInt(jsonResult.rows[0].elements[0].duration.text) * 60000
 	        })
+	        var a = $('.timer')
+	        $('.timer').show()
 	      });
     }, function errorCallback() {
 		$('.timer').hide()
@@ -66,7 +68,7 @@ orderPickup = React.createClass({
     return (
     	<div className="">
     		<h3 className="title">Your Order has been placed!</h3>
-    		<CountdownTimer initialTimeRemaining={this.state.time} />
+    		<CountdownTimer initialTimeRemaining={this.state.time} hidden/>
     		<div className="card container">
 	          <div className="item item-body column">
 	            <img className="full-image column" src={swipedMeal.image} />
