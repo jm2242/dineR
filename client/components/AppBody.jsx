@@ -8,6 +8,9 @@ AppBody = React.createClass({
           <ReactRouter.Link className="button button-icon ion-ios-star header-icon" to={"/savedItems"}></ReactRouter.Link>
         </div>
         <div className="view">
+          <div className="watermark">
+            <img src="/orange_logo_words.png"></img>
+          </div>
           <div className="scroll-content ionic-scroll">
             <div className="content overflow-scroll has-header">
               <ReactRouter.RouteHandler />

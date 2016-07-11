@@ -47,7 +47,7 @@ populate = function() {
   meals.insert({
     name: "Pepperoni Pizza",
     restaurant: "Pizza Place",
-    image: "https://www.pizzahut.com/assets/w/tile/thor/Pepperoni_Lovers_Pizza.png",
+    image: "http://images.bigoven.com/image/upload/v1457113782/awesome-pepperoni-pizza-7f8696.jpg",
     details: "Some dank pizza with pepperoni",
     price: "$10.99",
     rating: 3.6,

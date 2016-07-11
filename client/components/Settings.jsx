@@ -13,6 +13,7 @@ Settings = React.createClass({
       <div className="list list-view">
         <div className="bar bar-head bar-stable">
           <h2 className="title">Choose your search filter</h2>
+          <br></br>
         </div>
         <div>
           <br></br>

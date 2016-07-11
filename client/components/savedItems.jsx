@@ -47,7 +47,11 @@ removeButtonClicked() {
     })
     return (
       <div>
-        <h1 className="title">Saved Items</h1>
+        <div className="bar bar-head bar-stable">
+          <h2 className="title">Saved Items</h2>
+        </div>
+        <br></br>
+        <br></br>
         <div className="list">
           {list}
         </div>
