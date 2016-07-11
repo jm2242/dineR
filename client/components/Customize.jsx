@@ -22,6 +22,7 @@ Customize = React.createClass({
 
         var options = [];
         var c = 0;
+        var Available = false
         for (var option in swipedMeal['mealOptions']) {
             options.push(
                 '<li class="item item-checkbox">'
@@ -30,24 +31,42 @@ Customize = React.createClass({
                 '<input type="checkbox" checked="'+getCheckedValue(swipedMeal['mealOptions'][option])+'">' +
                 '</label>' +
                 '</li>')
+           	Available = true
         }
         options = options.toString()
         var regex = new RegExp(',', 'g');
         options = options.replace(regex, '')
+        if (!Available)
+        {
+        	return (
+        		<div className="">
+        			<div className="card">
+		                <div className="item item-divider no-items-title">
+		                    Customize
+		                </div>
+		                <div className="item item-text-wrap no-items-text">
+		                    {swipedMeal['name']} has no available options.<br/>
+		                    Please click to continue!
+		                </div>
+                	</div>
+                	<ReactRouter.Link className="button bar-footer float-bottom-2 button-block button-assertive" to={"/orderMethod/" + this.props.params.mealId}>Order Now</ReactRouter.Link>
+                </div> 
+            )
+        }
         return (
             <div className="">
-                <div className="item item-divider">
-                    <h1>Customize</h1>
-                </div>
-                <h2>{swipedMeal['name']}</h2>
+                <div className="card">
+	                <div className="item item-divider no-items-title">
+	                    Customize
+	                </div>
+	                <div className="item item-text-wrap no-items-text">
+	                    {swipedMeal['name']}
+	                </div>
+                </div> 
                 <ul className="list">
                     <div dangerouslySetInnerHTML={{__html: options}} />
                 </ul>
-                <div className="bar bar-footer bar-assertive">
-                    <ReactRouter.Link className="button button-bar" to={"/orderMethod/" + this.props.params.mealId}>Order
-                        <span className = "icon ion-arrow-right-a"></span>
-                    </ReactRouter.Link>
-                </div>
+				<ReactRouter.Link className="button bar-footer float-bottom-2 button-block button-assertive" to={"/orderMethod/" + this.props.params.mealId}>Order Now</ReactRouter.Link>
             </div>
         )
     }

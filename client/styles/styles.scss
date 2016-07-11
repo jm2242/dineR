@@ -25,7 +25,12 @@
 
 .float-bottom {
 	position: fixed;
-	bottom: -1em;
+	bottom: -.7em;
+}
+.float-bottom-2 {
+  position: fixed;
+  margin-bottom: 0px !important;
+  width: 100%;
 }
 
 .container {
