@@ -49,7 +49,7 @@ Customize = React.createClass({
 		                    Please click to continue!
 		                </div>
                 	</div>
-                	<ReactRouter.Link className="button bar-footer float-bottom-2 button-block button-assertive" to={"/orderMethod/" + this.props.params.mealId}>Order Now</ReactRouter.Link>
+                	<ReactRouter.Link className="button bar-footer float-bottom-2 button-block button-balanced" to={"/orderMethod/" + this.props.params.mealId}>Order Now</ReactRouter.Link>
                 </div>
             )
         }
@@ -66,7 +66,7 @@ Customize = React.createClass({
                 <ul className="list">
                     <div dangerouslySetInnerHTML={{__html: options}} />
                 </ul>
-				<ReactRouter.Link className="button bar-footer float-bottom-2 button-block button-assertive" to={"/orderMethod/" + this.props.params.mealId}>Order Now</ReactRouter.Link>
+				<ReactRouter.Link className="button bar-footer float-bottom-2 button-block button-balanced" to={"/orderMethod/" + this.props.params.mealId}>Order Now</ReactRouter.Link>
             </div>
         )
     }
