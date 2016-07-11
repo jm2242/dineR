@@ -23,7 +23,15 @@ removeButtonClicked() {
       return <h1>Loading</h1>
     }
     if (this.data.users[0] == undefined) {
-      return ( <h1> No saved items </h1> )
+        return (<div className="card">
+                    <div className="item item-divider no-items-title">
+                        There Are No Saved Items
+                    </div>
+                        <div className="item item-text-wrap no-items-text">
+                            Save items to fill the list by swiping items up or pressing the heart icon.
+                        </div>
+                  </div> 
+                )
     }
     let list = this.data.users.map((user) => {
       return (

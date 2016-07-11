@@ -45,7 +45,7 @@ Card = React.createClass({
           }
           var jsonResult = JSON.parse(result)
           self.setState({
-            distance: jsonResult.rows[0].elements[0].distance.text
+            distance: jsonResult.rows[0].elements[0].distance.text + " away"
           })
         });
       })

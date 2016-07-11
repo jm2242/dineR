@@ -17,8 +17,8 @@
 }
 
 .float-bottom {
-	position: absolute;
-	bottom: 0;
+	position: fixed;
+	bottom: -1em;
 }
 
 .container {
@@ -86,8 +86,20 @@ span.stars span {
 .timer {
   text-align: center;
   font-size: 30px;
+  display: none;
 }
 
 div.imgFinal img{
   height: 200px;
+}
+.no-items-title {
+  font-size: 1.5em;
+  text-align: center;
+}
+.no-items-text {
+  text-align: center;
+}
+
+.app-color {
+  color: #FF6600;
 }

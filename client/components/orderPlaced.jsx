@@ -25,6 +25,7 @@ orderPlaced = React.createClass({
           self.setState({
             time: parseInt(jsonResult.rows[0].elements[0].duration.text) * 60000
           })
+          $('.timer').show()
         });
     }, function errorCallback(error) {
       $('.timer').hide()
@@ -67,7 +68,7 @@ orderPlaced = React.createClass({
     	<div className="">
     		<h3 className="title">Your Order is on the way!</h3>
     		<p className="title">You will receive a confirmation email and text shortly.</p>
-    		<CountdownTimer initialTimeRemaining={this.state.time} />
+    		<CountdownTimer initialTimeRemaining={this.state.time} hidden/>
     		<div className="card container">
 	          <div className="item item-body column imgFinal">
 	            <img className="full-image column" src={swipedMeal.image} />
