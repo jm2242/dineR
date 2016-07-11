@@ -90,7 +90,7 @@ Home = React.createClass({
             {this.renderCards()}
             <div className="float-bottom button-bar">
               <MyButton clickHandler={this.xButtonClicked} buttonClass="button button-block button-assertive icon ion-close-round" /> 
-              <MyButton clickHandler={this.clickSavedMeal} buttonClass="button button-block button-calm icon ion-ios-star" />   
+              <MyButton clickHandler={this.clickSavedMeal} buttonClass="button button-block button-calm icon ion-ios-star header-icon" />   
               <MyButton clickHandler={this.orderButtonClicked} buttonClass="button button-block button-balanced icon ion-checkmark-round" />
             </div>
            </div>
