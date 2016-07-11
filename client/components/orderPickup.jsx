@@ -66,9 +66,10 @@ orderPickup = React.createClass({
     return (
     	<div className="">
     		<h3 className="title">Your Order has been placed!</h3>
+    		<p className="title">You will receive a confirmation email and text shortly.</p>
     		<CountdownTimer initialTimeRemaining={this.state.time} />
     		<div className="card container">
-	          <div className="item item-body column">
+	          <div className="item item-body column imgFinal">
 	            <img className="full-image column" src={swipedMeal.image} />
 	          </div>
 	          <div className="item">
@@ -80,6 +81,7 @@ orderPickup = React.createClass({
 	            <p>{swipedMeal.details}</p>
 	          </div>
 	        </div>
+	        <h3 className="title"> Thanks for ordering! </h3>
 	    </div>
     )
 }})

@@ -9,13 +9,19 @@ Settings = React.createClass({
   },
   render() {
     let settingsFilter = ""
-    return <div className="">
-        <div className="item item-divider">
-          <h3>Choose your search filter</h3>
+    return (
+      <div className="list list-view">
+        <div className="bar bar-head bar-stable">
+          <h2 className="title">Choose your search filter</h2>
         </div>
+        <div>
+          <br></br>
+          <br></br>
           <ReactRouter.Link className="button button-bar" to={"/home/allItemsFilter"}>All Items</ReactRouter.Link>
           <ReactRouter.Link className="button button-bar" to={"/home/savedItemsFilter"}>Saved Items</ReactRouter.Link>
           <ReactRouter.Link className="button button-bar" to={"/home/restaurantSpecialsFilter"}>Restaurant Specials</ReactRouter.Link> 
+        </div>
       </div>
+    )
   }
 });
