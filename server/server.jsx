@@ -293,7 +293,10 @@ populate = function() {
 
 }
 Meteor.startup(function() {
-  populate()
+    let i;
+    for (i=0;i < 50; i++) {
+        populate()
+    }
 })
 Meteor.methods({
   repopulate: function() {

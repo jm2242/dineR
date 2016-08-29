@@ -20,7 +20,7 @@ removeButtonClicked() {
   },
   render() {
     if (this.data.loading) {
-      return <h1>Loading</h1>
+      return <AppLoading></AppLoading>
     }
     if (this.data.users[0] == undefined) {
         return (<div className="card2">

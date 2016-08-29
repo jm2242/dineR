@@ -88,6 +88,8 @@ Home = React.createClass({
     }
     return <div>
             {this.renderCards()}
+            <h4> If you're on desktop, please view this using mobile view, which you can enable with the
+            Chrome Developer Tools</h4>
             <div className="float-bottom button-bar">
               <MyButton clickHandler={this.xButtonClicked} buttonClass="button button-block button-assertive icon ion-close-round" /> 
               <MyButton clickHandler={this.clickSavedMeal} buttonClass="button button-block button-calm icon ion-ios-star header-icon" />   
